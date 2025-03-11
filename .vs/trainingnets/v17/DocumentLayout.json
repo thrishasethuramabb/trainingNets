@@ -1,0 +1,513 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\services\\jwtauthenticationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\services\\jwtauthenticationmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\trainingnets.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\trainingnets.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\requests\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\requests\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\data\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\controllers\\trainingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\trainingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\obj\\project.assets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:trainingnets\\obj\\project.assets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\trainingnets.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:trainingnets\\trainingnets.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tbluserlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbluserlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tblclassification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tblclassification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\requests\\edittraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\requests\\edittraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\requests\\addtraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\requests\\addtraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tbltrainingdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbltrainingdepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tbltraininglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbltraininglog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tbltraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbltraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tbluseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbluseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\requests\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\requests\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tblemployeetraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tblemployeetraining.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tbldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usthset\\source\\repos\\thrisha_spring2025\\trainingnets\\trainingnets\\models\\tblemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tblemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 30,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T20:23:54.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "trainingnets\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\WeatherForecast.cs",
+              "RelativeToolTip": "trainingnets\\WeatherForecast.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T20:23:49.432Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "trainingnets\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Properties\\launchSettings.json",
+              "RelativeToolTip": "trainingnets\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-07T22:44:24.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "libman.json",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\libman.json",
+              "RelativeDocumentMoniker": "trainingnets\\libman.json",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\libman.json",
+              "RelativeToolTip": "trainingnets\\libman.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-07T14:55:57.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "project.assets.json",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\obj\\project.assets.json",
+              "RelativeDocumentMoniker": "trainingnets\\obj\\project.assets.json",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\obj\\project.assets.json",
+              "RelativeToolTip": "trainingnets\\obj\\project.assets.json",
+              "ViewState": "AQIAAM8AAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-24T18:04:31.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "tblUserLog.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblUserLog.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblUserLog.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblUserLog.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblUserLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T18:04:16.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "trainingnets.csproj.user",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\trainingnets.csproj.user",
+              "RelativeDocumentMoniker": "trainingnets\\trainingnets.csproj.user",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\trainingnets.csproj.user",
+              "RelativeToolTip": "trainingnets\\trainingnets.csproj.user",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2025-02-24T18:03:57.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "trainingnets\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\appsettings.Development.json",
+              "RelativeToolTip": "trainingnets\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-24T18:03:43.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "trainingnets.csproj",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\trainingnets.csproj",
+              "RelativeDocumentMoniker": "trainingnets\\trainingnets.csproj",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\trainingnets.csproj",
+              "RelativeToolTip": "trainingnets\\trainingnets.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-24T18:02:53.428Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "JwtAuthenticationManager.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Services\\JwtAuthenticationManager.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Services\\JwtAuthenticationManager.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Services\\JwtAuthenticationManager.cs",
+              "RelativeToolTip": "trainingnets\\Services\\JwtAuthenticationManager.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAuwBMAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-24T18:02:44.008Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "tblClassification.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblClassification.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblClassification.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblClassification.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblClassification.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-21T14:28:27.47Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "editTraining.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\editTraining.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Requests\\editTraining.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\editTraining.cs",
+              "RelativeToolTip": "trainingnets\\Requests\\editTraining.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:45:50.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "addTraining.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\addTraining.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Requests\\addTraining.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\addTraining.cs",
+              "RelativeToolTip": "trainingnets\\Requests\\addTraining.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-14T14:45:49.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "tblTrainingDepartment.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblTrainingDepartment.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblTrainingDepartment.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblTrainingDepartment.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblTrainingDepartment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-13T21:51:02.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "tblTrainingLog.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblTrainingLog.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblTrainingLog.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblTrainingLog.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblTrainingLog.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T23:11:54.464Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\EmployeeController.cs",
+              "ViewState": "AQIAAD4BAAAAAAAAAAAAAEkBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T19:53:12.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "tblTraining.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblTraining.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblTraining.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblTraining.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblTraining.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAYwBMAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T19:57:52.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "tblUserAccount.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblUserAccount.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblUserAccount.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblUserAccount.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblUserAccount.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-12T19:57:37.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\Login.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Requests\\Login.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\Login.cs",
+              "RelativeToolTip": "trainingnets\\Requests\\Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T21:26:53.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "addEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\addEmployee.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Requests\\addEmployee.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Requests\\addEmployee.cs",
+              "RelativeToolTip": "trainingnets\\Requests\\addEmployee.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAgwCMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T20:16:30.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "tblEmployeeTraining.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblEmployeeTraining.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblEmployeeTraining.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblEmployeeTraining.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblEmployeeTraining.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T20:15:33.194Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "tblDepartment.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblDepartment.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblDepartment.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblDepartment.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblDepartment.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T20:15:30.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "TrainingController.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\TrainingController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\TrainingController.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\TrainingController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\TrainingController.cs",
+              "ViewState": "AQIAAEwBAAAAAAAAAAAkwGMBAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T20:15:03.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\DepartmentController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T20:14:53.5Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "DataContext.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Data\\DataContext.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Data\\DataContext.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Data\\DataContext.cs",
+              "RelativeToolTip": "trainingnets\\Data\\DataContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T19:35:09.075Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "tblEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblEmployee.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblEmployee.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Models\\tblEmployee.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblEmployee.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAADwvy8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T19:42:46.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAAAKYAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-11T19:33:57.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\appsettings.json",
+              "RelativeDocumentMoniker": "trainingnets\\appsettings.json",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\appsettings.json",
+              "RelativeToolTip": "trainingnets\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-02-10T17:45:23.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Program.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Program.cs",
+              "ToolTip": "C:\\Users\\USTHSET\\source\\repos\\Thrisha_Spring2025\\trainingnets\\trainingnets\\Program.cs",
+              "RelativeToolTip": "trainingnets\\Program.cs",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAYwAABAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-10T17:44:50.663Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

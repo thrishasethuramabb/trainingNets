@@ -1,0 +1,231 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\weatherforecastcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\departmentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\controllers\\trainingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\controllers\\trainingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\models\\tbldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbldepartment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\models\\tblemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tblemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\models\\tbluseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\models\\tbluseraccount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|c:\\users\\usrupat1\\repo\\vrundapatel_spring2024\\trainingnets\\trainingnets\\requests\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{459AB039-94D1-4E46-B8D6-BCDB6FC4E20E}|trainingnets\\trainingnets.csproj|solutionrelative:trainingnets\\requests\\addemployee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "trainingnets\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Properties\\launchSettings.json",
+              "RelativeToolTip": "trainingnets\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-09T19:53:40.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TrainingController.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\TrainingController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\TrainingController.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\TrainingController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\TrainingController.cs",
+              "ViewState": "AgIAACoBAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T02:31:41.074Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T01:58:32.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Program.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Program.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Program.cs",
+              "RelativeToolTip": "trainingnets\\Program.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T19:56:31.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WeatherForecastController.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\WeatherForecastController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\WeatherForecastController.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\WeatherForecastController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\WeatherForecastController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T19:58:22.088Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\appsettings.json",
+              "RelativeDocumentMoniker": "trainingnets\\appsettings.json",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\appsettings.json",
+              "RelativeToolTip": "trainingnets\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-09T19:56:36.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "trainingnets\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\WeatherForecast.cs",
+              "RelativeToolTip": "trainingnets\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T19:54:49.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DepartmentController.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\DepartmentController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\DepartmentController.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\DepartmentController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\DepartmentController.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAkwIEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-10T02:28:12.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "tblUserAccount.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Models\\tblUserAccount.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblUserAccount.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Models\\tblUserAccount.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblUserAccount.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAgwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-08T01:36:34.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "tblEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Models\\tblEmployee.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblEmployee.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Models\\tblEmployee.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblEmployee.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAABBwBsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-27T02:13:06.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "addEmployee.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Requests\\addEmployee.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Requests\\addEmployee.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Requests\\addEmployee.cs",
+              "RelativeToolTip": "trainingnets\\Requests\\addEmployee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T15:15:27.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Controllers\\EmployeeController.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "trainingnets\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAiwK0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T15:06:11.214Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "tblDepartment.cs",
+              "DocumentMoniker": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Models\\tblDepartment.cs",
+              "RelativeDocumentMoniker": "trainingnets\\Models\\tblDepartment.cs",
+              "ToolTip": "C:\\Users\\USRUPAT1\\repo\\VrundaPatel_Spring2024\\trainingnets\\trainingnets\\Models\\tblDepartment.cs",
+              "RelativeToolTip": "trainingnets\\Models\\tblDepartment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-26T14:58:55.993Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

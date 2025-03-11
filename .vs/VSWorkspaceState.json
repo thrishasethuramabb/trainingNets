@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\trainingnets",
+    "\\trainingnets\\Controllers",
+    "\\trainingnets\\Models",
+    "\\trainingnets\\obj",
+    "\\trainingnets\\Requests",
+    "\\trainingnets\\Services"
+  ],
+  "SelectedNode": "\\trainingnets\\Controllers\\TrainingController.cs",
+  "PreviewInSolutionExplorer": false
+}

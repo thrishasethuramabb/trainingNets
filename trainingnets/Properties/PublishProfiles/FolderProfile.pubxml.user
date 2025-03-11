@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\Users\USTHSET\Desktop\pubfiles</_PublishTargetUrl>
+    <History>True|2025-03-11T18:24:28.7996115Z||;True|2025-03-11T11:53:35.3280127-05:00||;True|2025-03-11T11:25:36.2594157-05:00||;True|2025-03-11T08:42:21.6230631-05:00||;True|2025-03-11T08:16:05.8616982-05:00||;True|2025-03-10T17:01:46.6490095-05:00||;True|2025-03-10T11:10:18.2831856-05:00||;True|2025-03-10T11:10:03.5015231-05:00||;True|2025-03-10T10:45:05.7568024-05:00||;True|2025-03-10T10:36:33.9798544-05:00||;True|2025-03-10T10:28:20.4308963-05:00||;True|2025-03-10T10:00:52.9592815-05:00||;True|2025-03-10T08:32:08.9334262-05:00||;True|2025-03-07T16:36:25.2508678-06:00||;True|2025-03-07T15:53:19.2969545-06:00||;True|2025-03-07T15:53:03.3963958-06:00||;True|2025-03-07T15:51:22.4540429-06:00||;True|2025-03-07T15:18:37.1187653-06:00||;True|2025-03-07T14:16:39.2160866-06:00||;True|2025-03-07T13:32:08.5992034-06:00||;True|2025-03-07T09:56:54.1889175-06:00||;True|2025-03-07T09:55:30.5345359-06:00||;False|2025-03-07T09:53:46.4886533-06:00||;True|2024-12-10T10:14:42.9758792-06:00||;True|2024-12-09T14:16:58.8767676-06:00||;True|2024-12-09T14:13:38.1830942-06:00||;True|2024-12-09T14:03:23.4686401-06:00||;True|2024-12-09T14:02:40.9815705-06:00||;True|2024-12-09T13:55:37.4426356-06:00||;</History>
+    <LastFailureDetails />
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Server=US-L-PF4X9MC1%3bDatabase=trainingNets%3bUser Id=TCDUSER%3bPassword=Tcd123%3bTrustServerCertificate=True%3bConnection Timeout=60%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
