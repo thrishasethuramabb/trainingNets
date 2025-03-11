@@ -1,0 +1,349 @@
+.main-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.modal{
+    background-color: #fff;
+    height: 24rem;
+    width: 50rem;
+}
+
+.card{
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 90%;
+    padding: 1.2rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    background-color: #fff;
+
+    &.contain{
+            background-color: rgb(232, 234, 237);
+            width: 90%;
+
+
+    }
+
+    &.training{
+
+        padding: 2rem;
+        height: max-content;
+        overflow-y: scroll;
+
+    }
+
+    &.search{
+        width: 30rem;
+    }
+
+
+
+
+
+}
+
+.spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    height: 20rem;
+
+}
+
+.tag{
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.icons{
+margin-left: 0.5rem;
+    &.green{
+    color: rgb(88, 189, 88);
+    }
+
+    &.red{
+        color: red;
+    }
+
+    &.yellow{
+        color: rgb(139, 160, 62);
+    }
+
+}
+
+
+
+.inner{
+    border-bottom:1px solid transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    &.active{
+            border-radius: 1rem 1rem 0 0;
+             background-color:rgb(254, 91, 91);
+             color: #fff;
+
+
+        }
+}
+
+.inner:hover{
+    background-color:rgb(254, 91, 91);
+        color:#fff;
+
+
+
+}
+
+
+
+
+.emp{
+    font-size: 17px;
+    display: flex;
+    align-items: center;
+    cursor: pointers;
+
+
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+    padding:1rem;
+    width: 70%;
+    justify-content: space-evenly;
+
+}
+
+.form-check-input{
+    cursor: pointer;
+    margin-right: 0.5rem;
+    height:1.3em;
+    width: 1.3em;
+
+}
+
+.form-check-input:checked{
+    background-color: green;
+}
+
+.form-check-input:checked{
+    background-color: green;
+}
+
+.form-check-input:focus{
+    box-shadow: none;
+    box-shadow: 12px rgba(123, 247, 133, 0.9);
+
+    border-color: black
+}
+
+
+
+.modal-title{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    height: 2.5rem;
+    width: 40%;
+    border-radius: 20rem;
+    position: relative;
+
+
+
+}
+
+.icon{
+    width:5%;
+    position: absolute;
+    top:0;
+    left:10px;
+    margin-right: 1rem;
+
+    &.search{
+        color: grey;
+
+    }
+
+
+
+}
+
+
+.input{
+    width: 100%;
+    padding: 10.2px 18px;
+    border: none;
+
+
+}
+
+.input:focus{
+    border:none !important;
+    outline: none;
+}
+
+
+
+.text{
+
+    &.header{
+        font-size: 25px;
+        margin-bottom: 1rem;
+            font-weight: 500;
+
+    }
+
+    &.tr{
+    font-size: 16px;
+    font-weight: 400;
+
+    }
+
+}
+.edit{
+    cursor: pointer;
+    align-self: center;
+}
+
+.edit:hover{
+    transform: scale(1.2);
+}
+
+
+.hello{
+    background-color: #fff;
+}
+
+
+.toggler-wrapper{
+  display:flex;
+  align-items: center;
+  width: 50px;
+  height: 25px;
+  position: relative;
+  font-weight: 400;
+
+
+
+}
+
+.toggler-wrapper.toggler-wrapper.style-1{
+  &.enable{
+    cursor: pointer;
+  }
+}
+
+
+
+.toggler-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+
+
+.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: #e9e7e7;
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+
+
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+
+/*--------------------------------------------------------------
+3.0 Effects Styles
+--------------------------------------------------------------*/
+
+
+/*Style 1*/
+
+.toggler-wrapper.style-1 input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+  left: calc(100% - 19px - 3px);
+}
+
+
+.toggler-wrapper.style-1 .toggler-knob {
+  width: calc(25px - 6px);
+  height: calc(25px - 6px);
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  background-color: #fff;
+}
+
+
+.modal-body{
+    overflow-y: scroll;
+    &.add{
+        overflow-y:visible;
+    }
+}
+
+
+.options{
+    display: flex;
+    width: 100px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.btn{
+
+    &.actions{
+        margin-right:1rem;
+    border:none;
+    border: solid 1px rgb(236, 234, 234) !important;
+    height: 30px;
+    width:30px;
+    padding: 0;
+    padding: 2px;
+    box-shadow: none;
+
+    &:hover{
+      background-color:black;
+      color: white;
+
+
+    }
+
+    }
+
+
+
+
+}
+
+.info{
+    color: grey;
+    font-size: 12px;
+}

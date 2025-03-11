@@ -1,0 +1,42 @@
+
+.background {
+  /* The image used */
+  background-image: url("/assets/images/ABB_backgrounds_03.png");
+  position: absolute;
+
+  /* Set a specific height */
+  min-height: 7500vh;
+  width:100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden !important;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  z-index: -5;
+}
+
+
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  height: 20rem;
+}
+
+.sr-only {
+  margin-left: 0.2rem;
+}
+
+.spinner-border {
+  height: 3rem;
+  width: 3rem;
+}

@@ -1,0 +1,11 @@
+<div class="background" *ngIf="auth.getIsAuthorize() | async"></div>
+<div *ngIf="this.auth.getLoading() | async">
+  <div class="spinner">
+    <div class="spinner-border spinner-border-lg" role="status"></div>
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div *ngIf="!(this.auth.getLoading() | async)">
+  <app-navbar *ngIf="auth.getIsAuthorize() | async"></app-navbar>
+  <router-outlet></router-outlet>
+</div>

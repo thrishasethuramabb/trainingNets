@@ -1,0 +1,72 @@
+table{
+    width: 28rem !important;
+
+
+}
+
+body {
+  margin: 50px 0 0 0;
+  padding: 0;
+  width: 100%;
+  min-width: 250px;
+  text-align: center;
+}
+h3 {
+  margin-top: 75px;
+  font-family: sans-serif;
+  color: #222;
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.notebook {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top:1rem;
+  position: relative;
+  background:  rgb(180, 208, 209); /*#C9A8A1*/
+  min-height: 320px;
+  width: max-content;
+  height: max-content;
+  box-shadow: 1px -1px 5px #555;
+  border-top: 1px solid #946947;
+}
+
+.notebook:after {
+    position: absolute;
+    content: '';
+    bottom: -1px;
+    left: 0px;
+    height: 4px;
+    width: 100%;
+    background-size: 3px 1px;
+    background-image: -webkit-radial-gradient(40% 100%, circle, transparent 20%, #C9A8A1 35%);
+    background-image: -moz-radial-gradient(40% 100%, circle, transparent 20%, #C9A8A1 35%);
+    background-image: -ms-radial-gradient(40% 100%, circle, transparent 20%, #C9A8A1 35%);
+    background-image: -o-radial-gradient(40% 100%, circle, transparent 20%, #C9A8A1 35%);
+    background-image: radial-gradient(40% 100%, circle, transparent 20%, #C9A8A1 35%);
+}
+
+.notebook:before{
+    position: absolute;
+    content: '';
+    top: -5px;
+    left: 0;
+    height: 10px;
+    width: 99%;
+    background-size: 9px 12px;
+    background-image: -webkit-radial-gradient(5% 40%, circle, transparent 70%, #555 20%);
+    background-image: -moz-radial-gradient(5% 40%, circle, transparent 70%, #555 20%);
+    background-image: -ms-radial-gradient(5% 40%, circle, transparent 70%, #555 20%);
+    background-image: -o-radial-gradient(5% 40%, circle, transparent 70%, #555 20%);
+    background-image: radial-gradient(circle at 5% 40%, transparent 70%, #555 20%);
+}
+
+
+.title{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+
+
+}

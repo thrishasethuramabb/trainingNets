@@ -1,0 +1,41 @@
+<!-- chart.component.html -->
+
+<div *ngIf="isLoading" style="text-align:center; margin-top:1rem;">
+  <div class="spinner-border" role="status"></div>
+  <p>Loading chart data...</p>
+</div>
+
+<!-- Admin: Show bar chart -->
+<div *ngIf="!isLoading && user?.role === 'admin'" class="chart-container admin-chart-container">
+  <h3>Manager Wise Training Progress {{ date | date:'yyyy' }}</h3>
+  <div class="admin-chart-wrapper">
+    <canvas
+      baseChart
+      [data]="barChartData"
+      [options]="barChartOptions"
+      [type]="'bar'">
+    </canvas>
+  </div>
+</div>
+
+
+
+<!-- Manager/Leader: Show existing pie chart -->
+<div
+  *ngIf="!isLoading && (user?.role === 'manager' || user?.role === 'leader')"
+  class="chart-container pie-chart-container">
+  <h3>{{ date | date:'MMMM yyyy' }} Overall Trainings</h3>
+  <canvas
+    baseChart
+    [data]="pieChartData"
+    [options]="pieChartOptions"
+    [type]="'pie'">
+  </canvas>
+</div>
+
+
+
+
+<div *ngIf="!isLoading && user?.role !== 'admin' && user?.role !== 'manager' && user?.role !== 'leader'">
+  <p>No chart available for this role.</p>
+</div>

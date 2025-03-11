@@ -1,0 +1,57 @@
+<!--
+<div class="title emp">
+  Employee Training Status, {{this.date|date:'MMMM'}} {{this.date |date:'YYYY'}}
+  <div class="options">
+    <button type="button" class="btn" title="Edit" (click)="editable()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button
+      type="button"
+      class="btn"
+      title="Save"
+      (click)="save()"
+      *ngIf="!this.loading"
+    >
+      <mat-icon>check</mat-icon>
+    </button>
+    <button class="btn" type="button" *ngIf="this.loading" disabled="true">
+      <span
+        class="spinner-border spinner-border-sm text-dark"
+        role="status"
+        aria-hidden="true"
+      ></span>
+    </button>
+  </div>
+</div>
+<div class="container">
+  <div class="tabs">
+    <div
+      class="tabby-tab"
+      *ngFor="let training of trainingService.trainings; let i = index"
+    >
+      <input type="radio" id="tab-{{ i }}" name="tabby-tabs" checked />
+      <label class="label" for="tab-{{ i }}">
+        {{ training?.TrainingName || training?.tbltraining?.strTrainingName }}
+      </label>
+      
+      <div class="tabby-content">
+        <div class="emp-card" *ngFor="let emp of training?.status">
+          <label [ngClass]="classList">
+            {{ emp?.tblEmployee?.strEmployeeFirstName }}
+            {{ emp?.tblEmployee?.strEmployeeLastName }}
+            <input
+              type="checkbox"
+              [checked]="emp?.bitIsComplete"
+              [disabled]="!isEditable"
+              [(ngModel)]="emp.bitIsComplete"
+            />
+            <div class="toggler-slider">
+              <div class="toggler-knob"></div>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+-->

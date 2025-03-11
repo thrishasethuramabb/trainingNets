@@ -1,0 +1,156 @@
+<div class="container-body">
+  <div class="wrapper">
+    <div class="main-body">
+      <!-- Search Form -->
+      <form>
+        <div class="card search">
+          <input class="input" type="text" placeholder="Search..." [formControl]="filter" />
+          <mat-icon class="icon search">search</mat-icon>
+        </div>
+      </form>
+      <!-- Employees Table -->
+      <div class="card training">
+        <div class="spinner" *ngIf="loading">
+          <div class="spinner-border spinner-border-lg" role="status"></div>
+          <span class="sr-only" style="margin-left: 0.5rem">Loading...</span>
+        </div>
+        <table class="table table-hover" *ngIf="!loading">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Classification</th>
+              <th scope="col">Training Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let employee of filtered | async; index as i" (click)="open(content, employee)" style="cursor: pointer">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                <ngb-highlight
+                  [result]="employee.strEmployeeFirstName.concat(space).concat(employee.strEmployeeLastName)"
+                  [term]="filter.value">
+                </ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight
+                  [result]="employee.tblClassification?.strClassificationName"
+                  [term]="filter.value">
+                </ngb-highlight>
+              </td>
+              <td>
+                <div style="display: flex; align-items: center">
+                  <ngb-highlight
+                    [result]="(employee.completedTrainings || 0).toString().concat(slash).concat((employee.totalTrainings || 0).toString())"
+                    [term]="filter.value">
+                  </ngb-highlight>
+                  <mat-icon class="icons green" *ngIf="employee.totalTrainings && (employee.completedTrainings / employee.totalTrainings) * 100 === 100">
+                    check_circle
+                  </mat-icon>
+                  <mat-icon class="icons red" *ngIf="employee.totalTrainings && (employee.completedTrainings / employee.totalTrainings) * 100 < 50">
+                    error_outline
+                  </mat-icon>
+                  <mat-icon class="icons yellow" *ngIf="employee.totalTrainings && (employee.completedTrainings / employee.totalTrainings) * 100 >= 50 && (employee.completedTrainings / employee.totalTrainings) * 100 < 100">
+                    error_outline
+                  </mat-icon>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Modal for Employee Details -->
+      <ng-template #content let-modal>
+        <div class="modal-header">
+          <div class="modal-title" id="modal-basic-title">
+            <div>
+              {{ selectedEmployee.strEmployeeFirstName }} {{ selectedEmployee.strEmployeeLastName }}
+              <div class="tag">
+                Orientation Date: {{ selectedEmployee.dtOrientationDate | date }}
+              </div>
+              <div class="tag">
+                {{ selectedEmployee.tblClassification?.strClassificationName | titlecase }}
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table table-hover">
+            <thead class="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Training</th>
+                <th scope="col">Status</th>
+                <th scope="col">Completion Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let training of selectedEmployee.trainings; index as j">
+                <th scope="row">{{ j + 1 }}</th>
+                <td>{{ training.trainingName }}</td>
+                <td>
+                  <label [ngClass]="classList">
+                    <input type="checkbox"
+                      [(ngModel)]="training.IsComplete"
+                      [disabled]="!isEditable"
+                      name="chk{{j}}"/>
+                    <div class="toggler-slider">
+                      <div class="toggler-knob"></div>
+                    </div>
+                  </label>
+                </td>
+                <td>
+                  <input type="date"
+                    [(ngModel)]="training.CompletionDateString"
+                    [disabled]="!isEditable"
+                    name="date{{j}}"/>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-dark" (click)="showForm(selectedEmployee)"
+            *ngIf="logedInUserRole === 'manager' && selectedEmployee.tblClassification?.strClassificationName !== 'manager' && selectedEmployee.tblClassification?.strClassificationName !== 'leader'">
+            Assign Leader
+          </button>
+          <div>
+            <button type="button" class="btn btn-outline-dark" (click)="deactivate(selectedEmployee)"
+              *ngIf="logedInUserRole === 'manager' && selectedEmployee.tblClassification?.strClassificationName === 'leader'">
+              Deactivate Leader
+            </button>
+          </div>
+          <div>
+            <button type="button" class="btn btn-outline-dark" (click)="editable(selectedEmployee)" style="margin-right: 0.5rem">
+              Edit
+            </button>
+            <button type="button" class="btn btn-outline-dark" (click)="save(selectedEmployee)" *ngIf="!loading2" [disabled]="!isEditable">
+              Save
+            </button>
+            <button *ngIf="loading2" type="button" class="btn btn-outline-dark" disabled="true">
+              <div class="spinner-border spinner-border-sm" role="status"></div>
+            </button>
+          </div>
+        </div>
+        <div class="form">
+          <form class="row g-3" *ngIf="assign" autocomplete="off" #leaderForm="ngForm" (ngSubmit)="assignLeader(leaderForm, selectedEmployee)">
+            <div class="col-md-6">
+              <input autocomplete="false" name="hidden" type="text" style="display: none"/>
+              <label for="username" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username" autocomplete="off" required="true" name="username" [(ngModel)]="user.username"/>
+            </div>
+            <div class="col-md-6">
+              <label for="inputPassword4" class="form-label">Password</label>
+              <input type="password" minlength="6" class="form-control" id="inputPassword4" autocomplete="new-password" required="true" name="password" [(ngModel)]="user.password"/>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-outline-dark">Create Account</button>
+            </div>
+          </form>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

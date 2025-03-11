@@ -1,0 +1,46 @@
+/* If you want to keep your existing .chart or .title styles, keep them here */
+.chart {
+    /* Example color or text styles (optional) */
+    color: rgb(124, 216, 124);
+  }
+  
+  /* Title styling remains the same, for example */
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .pie-chart-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px; /* Adjust as needed */
+  }
+  
+  .pie-chart-container canvas {
+    display: inline-block; /* Ensures canvas respects text-align */
+    max-width: 100%;
+  }
+  
+  /* 1) Provide a container that sets an explicit size for the chart */
+  .chart-container {
+    /* Make it 90% of the parent width but not larger than 1000px */
+    width: 90%;
+    max-width: 1000px;
+  
+    /* Give enough height to make the chart bigger */
+    height: 500px;
+  
+    /* Center the container horizontally */
+    margin: 0 auto;
+  }
+  
+  /* 2) If you want the chart itself to fill the container, 
+     you can ensure the canvas expands to 100% */
+  .chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    overflow-x: auto; /* allows horizontal scrolling */
+    overflow-y: hidden;
+  }
+  

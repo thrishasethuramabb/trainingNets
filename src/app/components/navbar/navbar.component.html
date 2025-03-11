@@ -1,0 +1,107 @@
+<nav class="navbar navbar-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" routerLink="">
+      <img
+        src="../../../assets/images/TrainingNets.png"
+        alt="Bootstrap"
+        width="210"
+        height="50"
+      />
+    </a>
+
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          routerLink=""
+          routerLinkActive="activebutton"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <mat-icon class="icon">home </mat-icon>
+          Home
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          *ngIf="
+            (this.auth.getUser$() | async).role === 'manager' ||
+            (this.auth.getUser$() | async).role === 'leader'
+          "
+          class="nav-link"
+          routerLink="/trainings"
+          routerLinkActive="activebutton"
+        >
+          <mat-icon class="icon">assessment</mat-icon>Trainings</a
+        >
+
+        <a
+          *ngIf="(this.auth.getUser$() | async).role === 'admin'"
+          class="nav-link"
+          routerLink="/trainingsAdmin"
+          routerLinkActive="activebutton"
+        >
+          <mat-icon class="icon">assessment</mat-icon>Trainings</a
+        >
+      </li>
+      <li
+        class="nav-item"
+        *ngIf="(this.auth.getUser$() | async).role === 'admin'"
+      >
+        <a
+          class="nav-link"
+          routerLink="/departments"
+          routerLinkActive="activebutton"
+          ><mat-icon class="icon">domain</mat-icon>Departments</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          *ngIf="
+            (this.auth.getUser$() | async).role === 'manager' ||
+            (this.auth.getUser$() | async).role === 'leader'
+          "
+          class="nav-link"
+          routerLink="/employees"
+          routerLinkActive="activebutton"
+          ><mat-icon class="icon">supervisor_account</mat-icon>Employees</a
+        >
+        <a
+          *ngIf="(this.auth.getUser$() | async).role === 'admin'"
+          class="nav-link"
+          routerLink="/employeesAdmin"
+          routerLinkActive="activebutton"
+          ><mat-icon class="icon">supervisor_account</mat-icon>Employees</a
+        >
+      </li>
+      <li
+        class="nav-item"
+        *ngIf="(this.auth.getUser$() | async).role === 'admin'"
+      >
+        <!--<a class="nav-link" routerLink="/manage" routerLinkActive="activebutton"
+          ><mat-icon class="icon">manage_accounts</mat-icon>Manage</a
+        >-->
+      </li>
+    </ul>
+
+    <div class="conatiner d-flex">
+      <div class="nav d-flex align-items-center">
+        <span class="nav-item d-flex align-items-center"
+          ><mat-icon class="icon">account_circle</mat-icon
+          >{{ (auth.getUser$() | async).name }}</span
+        >
+        <a class="nav-item logout d-flex align-items-center" (click)="logout()"
+          ><mat-icon class="icon">logout</mat-icon>LogOut</a
+        >
+      </div>
+
+      <a class="navbar-brand">
+        <img
+          src="../../../assets/images/abb.svg"
+          alt="Bootstrap"
+          width="80"
+          height="40"
+        />
+      </a>
+    </div>
+  </div>
+</nav>

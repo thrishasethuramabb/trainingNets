@@ -1,0 +1,336 @@
+<div class="container-body">
+  <div class="wrapper">
+    <div class="main-body">
+      <form>
+        <div class="card search">
+          <input
+            class="input"
+            type="text"
+            placeholder="Search..."
+            [formControl]="filter"
+          />
+          <mat-icon class="icon search">search</mat-icon>
+        </div>
+      </form>
+      <button
+        style="align-self: flex-start; margin-bottom: 1rem; margin-left: 4.5rem"
+        type="button"
+        class="btn btn-dark"
+        (click)="openAdd(addDepartmentModal)"
+
+      >
+      
+        Add Department
+      </button>
+      <!-- Add Department -->
+      <ng-template #addDepartmentModal let-modal>
+        <div class="modal-header">
+          <div class="modal-title" id="modal-basic-title">
+            <div>Add Department</div>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="close()"
+          ></button>
+        </div>
+        <div class="modal-body add">
+          <form
+            class="row g-3"
+            #addForm="ngForm"
+            (ngSubmit)="addNewDepartment(addForm)"
+            autocomplete="off"
+          >
+            <!-- Hidden input ot disable autocomplete in Edge -->
+            <input
+              autocomplete="off"
+              name="hidden"
+              type="text"
+              style="display: none"
+            />
+            <div class="col-md-6">
+              <label for="strDepartmentName" class="form-label">Department</label>
+              <div class="info">Department</div>
+              <input
+                type="text"
+                class="form-control"
+                id="strDepartmentName"
+                required="true"
+                name="strDepartmentName"
+                autocomplete="off"
+                [(ngModel)]="this.addDepartment.strDepartmentName"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputAddress" class="form-label">Department Id</label>
+              <div class="info">Department Id</div>
+              <input
+                type="number"
+                [min]="0"
+                
+                class="form-control"
+                id="intDepartmentId"
+                required="true"
+                name="intDepartmentId"
+                autocomplete="off"
+                [(ngModel)]="this.addDepartment.intDepartmentId"
+              />
+            </div>
+           <div class="col-md-6">
+              <label for="input2" class="form-label">Status</label>
+              <div class="info">Choose one of the options</div>
+              <ng-select
+                [items]="isActiveOptions"
+                bindLabel="name"
+                bindValue="value"
+                placeholder="Select"
+                name="isActive"
+                required="true"
+                [(ngModel)]="this.addDepartment.bitIsActive"
+              >
+              </ng-select>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                *ngIf="!this.loading2"
+                type="submit"
+                class="btn btn-outline-dark"
+              >
+                Add
+              
+              </button>
+              <button
+                *ngIf="this.loading2"
+                type="button"
+                class="btn btn-outline-dark"
+                disabled="true"
+              >
+                <div
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                ></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </ng-template>
+
+      <!-- Edit Department -->
+      <ng-template #editContent let-modal>
+        <div class="modal-header">
+          <div class="modal-title" id="modal-basic-title">
+            <div>Edit Department</div>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="close()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form
+            class="row g-3"
+            #editForm="ngForm"
+            (ngSubmit)="updateDepartment(editForm)"
+            autocomplete="off"
+          >
+            <!-- Hidden input ot disable autocomplete in Edge -->
+            <input
+              autocomplete="off"
+              name="hidden"
+              type="text"
+              style="display: none"
+            />
+            <div class="col-md-6">
+              <label for="strDepartmentName" class="form-label">Department</label>
+              <div class="info">Department</div>
+              <input
+                type="text"
+                class="form-control"
+                id="strDepartmentName"
+                required="true"
+                name="strDepartmentName"
+                autocomplete="off"
+                [(ngModel)]="this.editDepartment.strDepartmentName"
+              />
+            </div>
+
+            <div class="col-md-6">
+              <label for="inputAddress" class="form-label">Department Id</label>
+              <div class="info">Department Id gien by the company</div>
+              <input
+                type="number"
+                [min]="0"
+                class="form-control"
+                id="intDepartmentId"
+                required="true"
+                name="intDepartmentId"
+                autocomplete="off"
+                [(ngModel)]="this.editDepartment.intDepartmentId"
+              />
+            </div>
+           <div class="col-md-6">
+              <label for="input2" class="form-label">Status</label>
+              <div class="info">Choose one of the options</div>
+              <ng-select
+                [items]="isActiveOptions"
+                bindLabel="name"
+                bindValue="value"
+                placeholder="Select"
+                name="bitIsActive"
+                required="true"
+                [(ngModel)]="this.editDepartment.bitIsActive"
+              >
+              </ng-select>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                *ngIf="!this.loading2"
+                type="submit"
+                class="btn btn-outline-dark"
+              >
+                Save
+              
+              </button>
+              <button
+                *ngIf="this.loading2"
+                type="button"
+                class="btn btn-outline-dark"
+                disabled="true"
+              >
+                <div
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                ></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </ng-template>
+     
+      <div class="card training">
+        <div class="spinner" *ngIf="this.loading">
+          <div class="spinner-border spinner-border-lg" role="status"></div>
+          <span class="sr-only" style="margin-left: 0.5rem">Loading...</span>
+        </div>
+        <table class="table" *ngIf="!this.loading">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Department</th>
+              <th scope="col">Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let department of filtered | async; index as i">
+              <th scope="row">{{ department.intDepartmentId }}</th>
+              <td>
+                <ngb-highlight
+                  [result]="department.strDepartmentName"
+                  [term]="filter.value"
+                ></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight
+                  [result]="department?.bitIsActive ? 'Active' : 'Inactive'"
+                  [term]="filter.value"
+                ></ngb-highlight>
+              </td>
+
+              <td>
+                <div class="options">
+                  <button
+                    type="button"
+                    class="btn actions"
+                    title="View Details"
+                  
+                    (click)="open(content)"
+                  >
+                    <mat-icon>open_in_new</mat-icon>
+                  </button>
+                  <button type="button" class="btn actions" title="Edit"
+                     (click)="openEditModal(editContent, department)" >
+
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </div>
+              </td>
+                 <!-- Department Details -->
+                 <ng-template #content let-modal>
+                  <div class="modal-header">
+                    <div class="modal-title" id="modal-basic-title">
+                      <div>{{ department?.strDepartmentName }}</div>
+                    </div>
+                    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form>
+                      <div class="card search">
+                        <input class="input" type="text" placeholder="Search..." [formControl]="empFilter" />
+                        <mat-icon class="icon search">search</mat-icon>
+                      </div>
+                    </form>
+                    <table class="table table-hover">
+                      <thead class="table-dark">
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">First Name</th>
+                          <th scope="col">Last Name</th>
+                          <th scope="col">Role</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let employee of department.employees; let i = index">
+                          <th scope="row">{{ i + 1 }}</th>
+                          <td>
+                            <input *ngIf="isEditable" type="text" class="form-control" [(ngModel)]="employee.strEmployeeFirstName" name="fname{{i}}" />
+                            <span *ngIf="!isEditable">{{ employee?.strEmployeeFirstName }}</span>
+                          </td>
+                          <td>
+                            <input *ngIf="isEditable" type="text" class="form-control" [(ngModel)]="employee.strEmployeeLastName" name="lname{{i}}" />
+                            <span *ngIf="!isEditable">{{ employee?.strEmployeeLastName }}</span>
+                          </td>
+                          <td>
+                            <!-- Here you might consider a select if you want to change role.
+                                 For now we assume role (classification) remains unchanged -->
+                            <span>{{ employee?.tblClassification?.strClassificationName }}</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-dark" (click)="editable(department)" style="margin-right: 0.5rem">
+                      Edit
+                    </button>
+                    <button *ngIf="isEditable" type="button" class="btn btn-outline-dark" (click)="saveEmployees(department)">
+                      Save
+                    </button>
+                    <button *ngIf="loading2" type="button" class="btn btn-outline-dark" disabled="true">
+                      <div class="spinner-border spinner-border-sm" role="status"></div>
+                    </button>
+                  </div>
+                </ng-template>
+                
+            
+            
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+ 
+  
+</div>
+
+                              

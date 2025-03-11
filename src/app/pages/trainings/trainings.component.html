@@ -1,0 +1,109 @@
+<!-- trainings.component.html -->
+<div class="container-body">
+  <div class="wrapper">
+    <div class="main-body">
+      <form>
+        <div class="card search">
+          <input class="input" type="text" placeholder="Search..." [formControl]="filter" />
+          <mat-icon class="icon search">search</mat-icon>
+        </div>
+      </form>
+      <div class="card training">
+        <div class="spinner" *ngIf="loading">
+          <div class="spinner-border spinner-border-lg" role="status"></div>
+          <span class="sr-only" style="margin-left: 0.5rem">Loading...</span>
+        </div>
+        <table class="table table-hover" *ngIf="!loading">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Training</th>
+              <th scope="col">Month</th>
+              <th scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let training of filtered | async; index as i" (click)="open(content, training)" style="cursor: pointer">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>
+                <ngb-highlight [result]="training.trainingName" [term]="filter.value"></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="training.trainingDate | date:'MMMM'" [term]="filter.value"></ngb-highlight>
+              </td>
+              <td>
+                <div style="display: flex; align-items: center">
+                  <ngb-highlight [result]="getCompletionPercent(training) | percent:'1.0-0'" [term]="filter.value"></ngb-highlight>
+                  <mat-icon class="icons green" *ngIf="getCompletionPercent(training) === 1">check_circle</mat-icon>
+                  <mat-icon class="icons red" *ngIf="getCompletionPercent(training) < 0.5">error_outline</mat-icon>
+                  <mat-icon class="icons yellow" *ngIf="getCompletionPercent(training) >= 0.5 && getCompletionPercent(training) < 1">error_outline</mat-icon>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <div class="modal-title" id="modal-basic-title">
+      <div>
+        {{ selectedTraining?.trainingName }}:
+        {{ selectedTraining?.duration }} minutes
+        <div class="tag">
+          {{ selectedTraining?.trainingDate | date:"MMMM" }}
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+  </div>
+  <div class="modal-body">
+    <div class="card search">
+      <input class="input" type="text" placeholder="Search employees..." [formControl]="empFilter" />
+      <mat-icon class="icon search">search</mat-icon>
+    </div>
+    <table class="table table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Employee</th>
+          <th scope="col">Status</th>
+          <th scope="col">Completion Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of (filteredEmp | async) || selectedTrainingEmployees; index as j">
+          <th scope="row">{{ j + 1 }}</th>
+          <td>
+            {{ emp.tblEmployee?.strEmployeeFirstName }} {{ emp.tblEmployee?.strEmployeeLastName }}
+          </td>
+          <td>
+            <label [ngClass]="classList">
+              <input type="checkbox" [(ngModel)]="emp.bitIsComplete" [disabled]="!isEditable" name="chk{{j}}" />
+              <div class="toggler-slider">
+                <div class="toggler-knob"></div>
+              </div>
+            </label>
+          </td>
+          <td>
+            <input type="date"
+              [ngModel]="emp.dtCompletionDate | date:'yyyy-MM-dd'"
+              (ngModelChange)="emp.dtCompletionDate = $event"
+              [disabled]="!isEditable"
+              name="date{{j}}" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="editable()">Edit</button>
+    <button *ngIf="!loading2" type="button" class="btn btn-outline-dark" (click)="save()" [disabled]="!isEditable">Save</button>
+    <button *ngIf="loading2" type="button" class="btn btn-outline-dark" disabled>
+      <div class="spinner-border spinner-border-sm" role="status"></div>
+    </button>
+  </div>
+</ng-template>

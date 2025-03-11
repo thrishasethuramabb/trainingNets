@@ -1,0 +1,46 @@
+<!-- Manager Dashboard -->
+<div
+  class="main"
+  *ngIf="(auth.getUser$() | async)?.role === 'manager' || (auth.getUser$() | async)?.role === 'leader'"
+>
+  <div class="card-row">
+    <!-- Manager carousel uses our updated carousel component -->
+    <app-carousel [trainings]="trainingService.trainings"></app-carousel>
+    <div class="card chart">
+      <app-chart></app-chart>
+    </div>
+  </div>
+
+  <div class="card-row second">
+    <div class="card table">
+      <app-table></app-table>
+    </div>
+    <!--
+    <div class="card emp-table">
+      <app-emp-table></app-emp-table>
+    </div>
+    -->
+  </div>
+</div>
+
+<!-- Admin Dashboard (unchanged) -->
+<div class="main" *ngIf="(auth.getUser$() | async)?.role === 'admin'">
+  <div class="card-row">
+    <app-carousel></app-carousel>
+    <div class="card chart">
+      <app-chart></app-chart>
+    </div>
+  </div>
+  <div class="card-row second">
+    <div class="card table">
+      <app-table></app-table>
+    </div>
+    <!-- Additional admin dashboard elements can remain here -->
+  </div>
+
+
+
+</div>
+
+
+

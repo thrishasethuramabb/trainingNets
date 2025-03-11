@@ -1,0 +1,145 @@
+<div class="background"></div>
+<div class="navbar logo-div">
+  <img src="../../../assets/images/TrainingNets.png" width="220" height="50" />
+
+  <div class="d-flex right" style="margin-right: 2rem">
+    <img src="../../../assets/images/abb.svg" height="30" width="80" />
+  </div>
+</div>
+
+<div [ngClass]="getClassList()" id="container">
+  <div class="form-container sign-up-container" *ngIf="isBarCode">
+    <form
+      #loginForm="ngForm"
+      (ngSubmit)="login(loginForm)"
+      id="login-form"
+      class="login-form"
+      autocomplete="off"
+    >
+      <h4>Scan your Barcode</h4>
+
+      <img src="../../../assets/images/barcode.jpg" height="100px" />
+      <p>Place your cursor at the box below and scan your barcode</p>
+      <div>
+        <label class="label-email">
+          <span>Barcode Number</span>
+          <input
+            type="text"
+            name="barcode"
+            [(ngModel)]="barcode"
+            required="true"
+          />
+        </label>
+        <button
+          class="login-btn"
+          type="button"
+          (click)="resetBarCode()"
+          style="margin-right: 2rem"
+        >
+          Clear
+        </button>
+
+        <button class="login-btn" type="submit" *ngIf="!this.loading">
+          Login
+        </button>
+        <button class="login-btn" disabled="true" *ngIf="this.loading">
+          <span
+            class="spinner-border spinner-border-sm"
+            role="status"
+            aria-hidden="true"
+          ></span>
+        </button>
+      </div>
+    </form>
+
+    <div>{{ barcode }}</div>
+  </div>
+  <div class="form-container sign-in-container">
+    <form
+      #loginForm="ngForm"
+      (ngSubmit)="login(loginForm)"
+      id="login-form"
+      class="login-form"
+      autocomplete="off"
+    >
+      <div>
+        <!--hidden input to prevent autofill in Edge  -->
+
+        <input
+          autocomplete="false"
+          name="hidden"
+          type="text"
+          style="display: none"
+        />
+        <label class="label-email">
+          <input
+            type="text"
+            class="text"
+            name="username"
+            [(ngModel)]="loginReq.username"
+            id="username"
+            placeholder="Username"
+            tabindex="1"
+            required
+          />
+          <span class="required" type="submit">Username</span>
+        </label>
+        <label class="label-email">
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="loginReq.password"
+            id="password"
+            placeholder="Password"
+            tabindex="1"
+            required
+
+          />
+          <span class="required" type="submit">Password</span>
+        </label>
+      </div>
+
+      <button class="login-btn" type="" *ngIf="!this.loading">Login</button>
+      <button class="login-btn" type="" disabled="true" *ngIf="this.loading">
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+      </button>
+
+      <figure aria-hidden="true">
+        <div class="person-body"></div>
+        <div class="neck skin"></div>
+        <div class="head skin">
+          <div class="eyes"></div>
+          <div class="mouth"></div>
+        </div>
+        <div class="hair"></div>
+        <div class="ears"></div>
+        <div class="shirt-1"></div>
+        <div class="shirt-2"></div>
+      </figure>
+    </form>
+  </div>
+  <div class="overlay-container">
+    <div class="overlay">
+      <div class="overlay-panel overlay-left" *ngIf="isBarCode">
+        <h4>Don't have access to your barcode?</h4>
+        <p style="font-size: 16px">Login with your username and password</p>
+        <button class="ghost" id="signIn" (click)="removeClass()">
+          LogIn with Username
+        </button>
+      </div>
+      <div class="overlay-panel overlay-right">
+        <h4>Don't Remember your username?</h4>
+
+        <p>Scan the barcode located at the backside of your company badge</p>
+        <button class="ghost" (click)="openBarCode()">
+          LogIn with Barcode
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

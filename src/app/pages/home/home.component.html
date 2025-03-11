@@ -1,0 +1,26 @@
+<div class="container-body">
+
+  <div class="container">
+    <h2>Export Employee Training Data</h2>
+    
+    <label>Start Date:</label>
+    <input type="date" [(ngModel)]="startDate" />
+    
+    <label>End Date:</label>
+    <input type="date" [(ngModel)]="endDate" />
+  
+    <button (click)="exportData()">Export to Excel</button>
+  </div> 
+
+  
+  <div class="wrapper">
+    <div *ngIf="trainingService.loading" class="spinner">
+      <div class="spinner-border spinner-border-lg" role="status"></div>
+      <span class="sr-only">Loading...</span>
+    </div>
+    <app-dashboard *ngIf="!trainingService.loading"></app-dashboard>
+  </div>
+ 
+</div>
+
+

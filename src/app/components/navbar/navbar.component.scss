@@ -1,0 +1,44 @@
+.container-fluid{
+    margin-left: 2rem;
+
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar{
+    background-color: rgb(0, 0, 0) !important;
+    height: 4rem;
+}
+
+.nav-link{
+    color: white !important;
+    display: flex !important;
+    align-items:center !important;
+    cursor: pointer;
+    margin-right: 1rem;
+
+
+}
+
+.nav-link:hover {
+  border-bottom: solid red;
+}
+
+.icon{
+    color: white;
+}
+
+.activebutton{
+    border-bottom: solid red;
+}
+
+.nav-item{
+    text-decoration: none;
+    color: white;
+    margin-right:1rem;
+    &.logout{
+        cursor: pointer !important;
+    }
+}

@@ -1,0 +1,267 @@
+// body {
+//   height: 100%;
+//   background-color: #333;
+//   color: whitesmoke;
+//   font-size: 16px;
+//   font-family: 'Lato';
+// }
+// h1 { font-size: 32px; }
+// h2 { font-size: 26px; }
+// h3 { font-size: 18px; }
+// p { margin: 0 0 15px; line-height: 24px; color: gainsboro; }
+// a { color: dodgerblue; text-decoration: none; border-bottom: 1px dotted; }
+// a:hover { color: tomato; }
+
+.container {
+  width: 620px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+/* ------------------- */
+/* PEN STYLES      -- */
+/* ----------------- */
+
+/* MAKE IT CUTE ----- */
+.tabs {
+  position: relative;
+  display: flex;
+  min-height: 320px;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+  width: 600;
+  background:rgb(238, 228, 228);
+box-shadow: 1px -1px 5px #555;
+
+}
+
+.tabby-tab {
+  flex: 1;
+  width: 200px;
+}
+
+.label {
+  display: block;
+  box-sizing: border-box;
+  /* tab content must clear this */
+    height: 40px;
+
+  padding: 10px;
+  text-align: center;
+  background: #c0a4a3;
+  color: white;
+  font-size: 500 !important;
+  transition: background 0.5s ease;
+
+}
+
+.label:hover {
+  background:#b79492;
+  color: white;
+  cursor: pointer;
+
+}
+
+.tabby-content {
+  position: absolute;
+
+  left: 0; bottom: 0; right: 0;
+  /* clear the tab labels */
+    top: 40px;
+
+  padding: 20px;
+  background:rgb(238, 228, 228);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease   ;
+
+  /* show/hide */
+    opacity: 0;
+    transform: scale(0.1);
+    transform-origin: top left;
+    overflow-y: scroll;
+
+}
+
+
+
+
+/* MAKE IT WORK ----- */
+
+.tabby-tab [type=radio] { display: none; }
+[type=radio]:checked ~ label {
+  background: #6d6875;
+  color: white;
+  font-size: 500;
+  z-index: 2;
+}
+
+[type=radio]:checked ~ label ~ .tabby-content {
+  z-index: 1;
+
+  /* show/hide */
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* BREAKPOINTS ----- */
+@media screen and (max-width: 767px) {
+  .tabs { min-height: 400px;}
+}
+
+@media screen and (max-width: 480px) {
+  .tabs { min-height: 580px; }
+  .tabby-tab label {
+    height: 60px;
+  }
+  .tabby-content { top: 60px; }
+  .tabby-content img {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+.emp-card{
+
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 0.5rem;
+
+}
+
+.check{
+    border: none;
+    outline: none;
+
+
+}
+
+
+.toggler-wrapper{
+  display:flex;
+  align-items: center;
+  width: 500px;
+  height: 25px;
+  position: relative;
+  font-weight: 400;
+
+
+
+}
+
+.toggler-wrapper.toggler-wrapper.style-1{
+  &.enable{
+    cursor: pointer;
+  }
+}
+
+
+
+.toggler-wrapper input[type="checkbox"] {
+  display: none;
+}
+
+
+
+.toggler-wrapper input[type="checkbox"]:checked+.toggler-slider {
+  background-color: #44cc66;
+}
+
+.toggler-wrapper .toggler-slider {
+  background-color: #e9e7e7;
+  position: absolute;
+  border-radius: 100px;
+  top: 0;
+  left: 470px;
+  width: 10%;
+  height: 100%;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+
+
+}
+
+.toggler-wrapper .toggler-knob {
+  position: absolute;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+
+/*--------------------------------------------------------------
+3.0 Effects Styles
+--------------------------------------------------------------*/
+
+
+/*Style 1*/
+
+.toggler-wrapper.style-1 input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+  left: calc(100% - 19px - 3px);
+}
+
+
+.toggler-wrapper.style-1 .toggler-knob {
+  width: calc(25px - 6px);
+  height: calc(25px - 6px);
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  background-color: #fff;
+}
+
+
+.title{
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+
+    &.emp{
+        width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 1rem;
+
+    }
+}
+
+.options{
+    display: flex;
+    width: 100px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.btn{
+    margin-left:1rem;
+    border:none;
+    border: solid 1px black !important;
+    height: 30px;
+    width:30px;
+    padding: 0;
+    padding: 2px;
+    box-shadow: none;
+
+    &:hover{
+      background-color:black;
+      color: white;
+
+
+    }
+
+
+
+}
+
+
+
+
+
+
+
+

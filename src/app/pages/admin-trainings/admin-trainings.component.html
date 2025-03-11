@@ -1,0 +1,493 @@
+<div class="container-body">
+  <div class="wrapper">
+    <div class="main-body">
+      <form>
+        <div class="card search">
+          <input
+            class="input"
+            type="text"
+            placeholder="Search..."
+            [formControl]="filter"
+          />
+         
+          <mat-icon class="icon search">search</mat-icon>
+        </div>
+      </form>
+      <button
+        style="align-self: flex-start; margin-bottom: 1rem; margin-left: 4.5rem"
+        type="button"
+        class="btn btn-dark"
+        (click)="openAdd(addTrainingModal)"
+      >
+        Add Training
+      </button>
+      <!-- Add Training -->
+      <ng-template #addTrainingModal let-modal>
+        <div class="modal-header">
+          <div class="modal-title" id="modal-basic-title">
+            <div>Add a New Training</div>
+          </div>
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            (click)="close()"
+          ></button>
+        </div>
+        <div class="modal-body add">
+          <form
+            class="row g-3"
+            #addForm="ngForm"
+            (ngSubmit)="addNewTraining(addForm)"
+            autocomplete="off"
+          >
+            <!-- Hidden input ot disable autocomplete in Edge -->
+            
+            <input
+              autocomplete="off"
+              name="hidden"
+              type="text"
+              style="display: none"
+            />
+            <div class="col-md-6">
+              <label for="input" class="form-label">Name</label>
+              <div class="info">Training's Name</div>
+              <input
+                type="text"
+                class="form-control"
+                id="input"
+                required="true"
+                name="name"
+                autocomplete="off"
+                [(ngModel)]="this.addTraining.name"
+                
+                
+              />
+            </div>
+        
+
+            <div class="col-md-6">
+              <label for="inputAddress" class="form-label"
+                >Duration (in minutes)</label
+              >
+              <div class="info">1 hour = 60 minutes</div>
+              <input
+                type="number"
+                [min]="0"
+                class="form-control"
+                id="inputAddress"
+                required="true"
+                name="duration"
+                autocomplete="off"
+                [(ngModel)]="this.addTraining.duration"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="inputAddress" class="form-label"
+                >Frequency (in years)</label
+              >
+              <div class="info">0 if not repetititve</div>
+              <input
+                type="number"
+                [min]="0"
+                class="form-control"
+                id="inputAddress"
+                [required]="true"
+                name="frequency"
+                autocomplete="off"
+                [(ngModel)]="this.addTraining.frequency"
+              />
+            </div>
+            <div class="col-md-6">
+              <label for="input2" class="form-label">Due Month</label>
+              <div class="info">Select 'None' if not any</div>
+              <ng-select
+                required="true"
+                name="month"
+                autocomplete="off"
+                [(ngModel)]="this.dueMonth"
+              >
+                <ng-option
+                  *ngFor="let month of months; let i = index"
+                  [value]="i"
+                  >{{ month }}</ng-option
+                >
+              </ng-select>
+            </div>
+            <div class="col-md-6">
+              <label for="inputState" class="form-label">Departments</label>
+              <div class="info">
+                Select 'ALL' if it applies to all departments
+              </div>
+              <ng-select
+                [multiple]="true"
+                [dropdownPosition]="'auto'"
+                required="true"
+                name="department"
+                autocomplete="off"
+                [(ngModel)]="this.addTraining.departments"
+              >
+                <ng-option
+                  *ngFor="let department of departments"
+                  [value]="department"
+                  >{{ department.strDepartmentName }}</ng-option
+                >
+              </ng-select>
+            </div>
+
+            <div class="col-md-6">
+              <label for="input2" class="form-label">Status</label>
+              <div class="info">Choose one of the options</div>
+              <ng-select
+                [items]="isActiveOptions"
+                bindLabel="name"
+                bindValue="value"
+                placeholder="Select"
+                name="isActive"
+                required="true"
+                autocomplete="off"
+                [(ngModel)]="this.addTraining.isActive"
+              >
+              </ng-select>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                *ngIf="!this.loading2"
+                type="submit"
+                class="btn btn-outline-dark"
+              >
+                Add
+              </button>
+              <button
+                *ngIf="this.loading2"
+                type="button"
+                class="btn btn-outline-dark"
+                disabled="true"
+              >
+                <div
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                ></div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </ng-template>
+      <div class="card training">
+        <div class="spinner" *ngIf="this.loading">
+          <div class="spinner-border spinner-border-lg" role="status"></div>
+          <span class="sr-only" style="margin-left: 0.5rem">Loading...</span>
+        </div>
+        <table class="table" *ngIf="!this.loading">
+          <thead class="table-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Training</th>
+              <th scope="col">Due Month</th>
+              <th scope="col">Frequency (yrs)</th>
+              <th scope="col">Status</th>
+              <th scope="col">State</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let training of filtered | async; index as i">
+              <th scope="row">{{ i + 1 }}</th>
+              <td>{{ training.trainingName }}</td>
+              <td>{{ training.trainingDate | date: 'MMMM' }}</td>
+                <td>{{ training.frequency }}</td>
+             
+
+              <td>{{ training.status.length ? 'Complete' : 'Pending' }}</td>
+              <td>{{ training.isActive }}</td>
+                            <td>
+                              <button class="btn actions" (click)="open(content, training)">
+                                <mat-icon>open_in_new</mat-icon>
+                              </button>
+                              <button class="btn actions" (click)="openEditModal(editContent, training)">
+                                <mat-icon>edit</mat-icon>
+                              </button>
+                              
+              </td>
+
+              <!-- Edit Training -->
+              <ng-template #editContent let-modal>
+                <div class="modal-header">
+                  <div class="modal-title" id="modal-basic-title">
+                    <div>Edit Training details</div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="close()"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form
+                    class="row g-3"
+                    #editForm="ngForm"
+                    (ngSubmit)="updateTraining(editForm)"
+                    autocomplete="off"
+                  >
+                    <!-- Hidden input ot disable autocomplete in Edge -->
+                    <input
+                      autocomplete="off"
+                      name="hidden"
+                      type="text"
+                      style="display: none"
+                    />
+                    <div class="col-md-6">
+                      <label for="input" class="form-label">Name</label>
+                      <div class="info">Training's Name</div>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="input"
+                        required="true"
+                        name="name"
+                        autocomplete="off"
+                        [(ngModel)]="this.editTrainingModel.name"
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <label for="inputAddress" class="form-label"
+                        >Duration (in minutes)</label
+                      >
+                      <div class="info">1 hour = 60 minutes</div>
+                      <input
+                        type="number"
+                        [min]="0"
+                        class="form-control"
+                        id="inputAddress"
+                        required="true"
+                        name="duration"
+                        autocomplete="off"
+                        [(ngModel)]="this.editTrainingModel.duration"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputAddress" class="form-label"
+                        >Frequency (in years)</label
+                      >
+                      <div class="info">0 if not repetititve</div>
+                      <input
+                        type="number"
+                        [min]="0"
+                        class="form-control"
+                        id="inputAddress"
+                        [required]="true"
+                        name="frequency"
+                        autocomplete="off"
+                        [(ngModel)]="this.editTrainingModel.frequency"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="input2" class="form-label">Due Month</label>
+                      <div class="info">Select 'None' if not any</div>
+                      <ng-select
+                        required="true"
+                        name="month"
+                        autocomplete="off"
+                        [(ngModel)]="this.dueMonth"
+                      >
+                        <ng-option
+                          *ngFor="let month of months; let i = index"
+                          [value]="i"
+                          >{{ month }}</ng-option
+                        >
+                      </ng-select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="inputState" class="form-label"
+                        >Departments</label
+                      >
+                      <div class="info">
+                        Select 'ALL' if it aplies to all departments
+                      </div>
+
+                      <ng-select
+                        [items]="departments"
+                        bindLabel="strDepartmentName"
+                        bindValue="intDepartmentId"
+                        [multiple]="true"
+                        placeholder="Select"
+                        autocomplete="off"
+                        name="department"
+                        [(ngModel)]="this.editTrainingModel.departmentIds"
+                      >
+                      </ng-select>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="input2" class="form-label">Status</label>
+                      <div class="info">Choose one of the options</div>
+                      <ng-select
+                        [items]="isActiveOptions"
+                        bindLabel="name"
+                        bindValue="value"
+                        placeholder="Select"
+                        autocomplete="off"
+                        name="isActive"
+                        [(ngModel)]="this.editTrainingModel.isActive"
+                      >
+                      </ng-select>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        *ngIf="!this.loading2"
+                        type="submit"
+                        class="btn btn-outline-dark"
+                      >
+                        Save
+                      </button>
+                      <button
+                        *ngIf="this.loading2"
+                        type="button"
+                        class="btn btn-outline-dark"
+                        disabled="true"
+                      >
+                        <div
+                          class="spinner-border spinner-border-sm"
+                          role="status"
+                        ></div>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </ng-template>
+              <!-- Training Details -->
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <div class="modal-title" id="modal-basic-title">
+                    <div>
+                      {{ training?.tbltraining?.strTrainingName }}:
+                      <td>{{ training.duration || 'Training Duration' }}</td> 
+                      <div class="tag">
+                        {{
+                          training?.tbltraining?.dtTrainingDate | date : "MMMM"
+                        }}
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="close()"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="card search">
+                      <input
+                        class="input"
+                        type="text"
+                        placeholder="Search..."
+                        [formControl]="empFilter"
+                      />
+                      <mat-icon class="icon search">search</mat-icon>
+                    </div>
+                  </form>
+                  <table class="table table-hover">
+                    <thead class="table-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Employee</th>
+                        <th scope="col">Department</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Completion Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let emp of selectedTraining; let i = index">
+                        <th scope="row">{{ i + 1 }}</th>
+                        
+                        <!-- Editable Employee Name -->
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            [(ngModel)]="emp.employeeName"
+                            [disabled]="!isEditable"
+                          />
+                        </td>
+                        
+                        <!-- Editable Department -->
+                        <td>
+                          <input
+                            type="text"
+                            class="form-control"
+                            [(ngModel)]="emp.department"
+                            [disabled]="!isEditable"
+                          />
+                        </td>
+                        
+                        <!-- Editable Status -->
+                        <td>
+                          <select
+                            class="form-control"
+                            [(ngModel)]="emp.bitIsComplete"
+                            [disabled]="!isEditable"
+                          >
+                            <option [value]="true">Complete</option>
+                            <option [value]="false">Pending</option>
+                          </select>
+                        </td>
+                        
+                        <!-- Editable Completion Date -->
+                        <td>
+                          <input
+                            type="date"
+                            class="form-control"
+                            [(ngModel)]="emp.dtCompletionDate"
+                            [disabled]="!isEditable"
+                          />
+                        </td>
+                      </tr>
+                      
+                      
+                    </tbody>
+                    
+                    
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    (click)="editable(training)"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    *ngIf="!this.loading2"
+                    type="button"
+                    class="btn btn-outline-dark"
+                    (click)="save(training)"
+                    [disabled]="!isEditable"
+                  >
+                    Save
+                  </button>
+                  <button
+                    *ngIf="this.loading2"
+                    type="button"
+                    class="btn btn-outline-dark"
+                    disabled="true"
+                  >
+                    <div
+                      class="spinner-border spinner-border-sm"
+                      role="status"
+                    ></div>
+                  </button>
+                </div>
+              </ng-template>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

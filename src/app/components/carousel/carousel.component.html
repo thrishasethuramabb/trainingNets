@@ -1,0 +1,107 @@
+<div *ngIf="(trainings || []).length > 0; else noCarousel">
+  <ngb-carousel [showNavigationIndicators]="false" [interval]="10000">
+    <ng-template ngbSlide *ngFor="let training of trainings">
+      <div class="cards-wrapper">
+        <div class="card">
+          <div class="flip-card" (click)="cardClicked()" [@cardFlip]="data.state">
+            <!-- Back Face: Aggregated Info -->
+            <div class="face back">
+              <img class="image" src="../../../assets/images/hse5.jpg" alt="Back image" />
+              <div class="inner-text">
+                <div class="inner-header">
+                  Training: {{ getTrainingName(training) }}
+                </div>
+                <div class="aggregated-info">
+                  {{ getCompletedCount(training) }} / {{ getTotalCount(training) }} Employee(s) completed this training
+                  
+                </div>
+               
+              </div>
+            </div>
+            <!-- Front Face: Detailed Breakdown -->
+            <div class="face front">
+              <img class="image" src="../../../assets/images/hse4.jpg" alt="Front image" />
+              <div class="inner-text">
+                <div class="inner-body">
+                  <span class="inner-header">
+                    <mat-icon class="icon green">check_circle</mat-icon>
+                    Completed
+                  </span>
+                  <div class="employee-list">
+                    <ul class="list" *ngIf="getCompleted(training)?.length > 0; else noDetails">
+                      <li class="points" *ngFor="let emp of getCompleted(training)">
+                        <mat-icon>perm_identity</mat-icon>
+                        <span class="emp-name">
+                          {{ emp.tblEmployee 
+                               ? (emp.tblEmployee.strEmployeeFirstName + ' ' + emp.tblEmployee.strEmployeeLastName)
+                               : (emp.strEmployeeFirstname 
+                                   ? (emp.strEmployeeFirstname + ' ' + emp.strEmployeeLastName)
+                                   : (emp.intEmployeeId ? ('Emp ' + emp.intEmployeeId) : 'N/A')) }}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="inner-body">
+                  <span class="inner-header">
+                    <mat-icon class="icon red">error_outline</mat-icon>
+                    Not Completed
+                  </span>
+                  <div class="employee-list">
+                    <ul class="list" *ngIf="getIncomplete(training)?.length > 0">
+                      <li class="points" *ngFor="let emp of getIncomplete(training)">
+                        <mat-icon>perm_identity</mat-icon>
+                        <span class="emp-name">
+                          {{ emp.tblEmployee 
+                               ? (emp.tblEmployee.strEmployeeFirstName + ' ' + emp.tblEmployee.strEmployeeLastName)
+                               : (emp.strEmployeeFirstname 
+                                   ? (emp.strEmployeeFirstname + ' ' + emp.strEmployeeLastName)
+                                   : (emp.intEmployeeId ? ('Emp ' + emp.intEmployeeId) : 'N/A')) }}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <ng-template #noDetails>
+                  <p>Employee details not available.</p>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+           <!-- Clickable link -->
+           <div>
+            <a [href]="getTrainingLink(training)" target="_blank" (click)="$event.stopPropagation()" class="btn btn-link">
+              View Course Link
+            </a>
+          </div>
+          <!-- Training header and progress bar -->
+          <div class="text">
+            <div class="header title">
+              Training: {{ getTrainingName(training) }}
+            </div>
+            <ngb-progressbar
+              class="bar"
+              type="success"
+              [max]="getTotalCount(training)"
+              [value]="getCompletedCount(training)"
+              [striped]="true"
+              [animated]="true">
+              <span class="skill">
+                Completed
+                <i class="val">
+                  {{ (getCompletedCount(training) / (getTotalCount(training) || 1)) * 100 | number:'1.0-1' }}%
+                </i>
+              </span>
+            </ngb-progressbar>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+  <div class="count" title="You have {{ trainings?.length }} trainings this month">
+    {{ trainings?.length }}
+  </div>
+</div>
+<ng-template #noCarousel>
+  <p>No training data available for the carousel.</p>
+</ng-template>
