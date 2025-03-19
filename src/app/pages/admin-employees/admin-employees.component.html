@@ -522,11 +522,12 @@
                         <!-- Training Completion Date (bind to dtCompletionDate) -->
                         <td>
                           <input
-                            type="date"
-                            class="form-control"
-                            [(ngModel)]="training.dtCompletionDate"
-                            [disabled]="!training.isEditing"
-                          />
+                                type="date"
+                                class="form-control"
+                                [(ngModel)]="training.dtCompletionDateString"
+                                [disabled]="!training.isEditing"
+                              />
+
                         </td>
                         
                         <!-- Save Button for Each Training -->
@@ -542,11 +543,15 @@
                         </td>
                       </tr>
                       
-                    </tbody>
+                   
                     
                   </table>
                   
-                
+                          <!-- Right below the table -->
+         <!-- Example: Only show pagination controls if totalPages > 1 -->
+
+
+
                 </div>
                 <div class="modal-footer">
                   <button
@@ -574,6 +579,11 @@
             </tr>
           </tbody>
         </table>
+        <div class="pagination" *ngIf="totalPages > 1">
+          <button [disabled]="currentPage === 1" (click)="prevPage()">Prev</button>
+          <span>Page {{ currentPage }} of {{ totalPages }}</span>
+          <button [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+        </div>
       </div>
     </div>
   </div>

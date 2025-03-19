@@ -2,17 +2,21 @@
 <div class="container-body">
   <div class="wrapper">
     <div class="main-body">
+      <!-- 1) Top Search Form for trainings -->
       <form>
         <div class="card search">
           <input class="input" type="text" placeholder="Search..." [formControl]="filter" />
           <mat-icon class="icon search">search</mat-icon>
         </div>
       </form>
+
+      <!-- 2) Main Trainings Table -->
       <div class="card training">
         <div class="spinner" *ngIf="loading">
           <div class="spinner-border spinner-border-lg" role="status"></div>
           <span class="sr-only" style="margin-left: 0.5rem">Loading...</span>
         </div>
+
         <table class="table table-hover" *ngIf="!loading">
           <thead class="table-light">
             <tr>
@@ -23,20 +27,49 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="let training of filtered | async; index as i" (click)="open(content, training)" style="cursor: pointer">
+            <!-- For each training, open the detail modal on row click -->
+            <tr
+              *ngFor="let training of filtered | async; index as i"
+              (click)="open(content, training)"
+              style="cursor: pointer"
+            >
               <th scope="row">{{ i + 1 }}</th>
               <td>
-                <ngb-highlight [result]="training.trainingName" [term]="filter.value"></ngb-highlight>
+                <ngb-highlight
+                  [result]="training.trainingName"
+                  [term]="filter.value"
+                ></ngb-highlight>
               </td>
               <td>
-                <ngb-highlight [result]="training.trainingDate | date:'MMMM'" [term]="filter.value"></ngb-highlight>
+                <ngb-highlight
+                  [result]="training.trainingDate | date:'MMMM'"
+                  [term]="filter.value"
+                ></ngb-highlight>
               </td>
               <td>
                 <div style="display: flex; align-items: center">
-                  <ngb-highlight [result]="getCompletionPercent(training) | percent:'1.0-0'" [term]="filter.value"></ngb-highlight>
-                  <mat-icon class="icons green" *ngIf="getCompletionPercent(training) === 1">check_circle</mat-icon>
-                  <mat-icon class="icons red" *ngIf="getCompletionPercent(training) < 0.5">error_outline</mat-icon>
-                  <mat-icon class="icons yellow" *ngIf="getCompletionPercent(training) >= 0.5 && getCompletionPercent(training) < 1">error_outline</mat-icon>
+                  <!-- e.g. a completion percentage -->
+                  <ngb-highlight
+                    [result]="getCompletionPercent(training) | percent:'1.0-0'"
+                    [term]="filter.value"
+                  ></ngb-highlight>
+
+                  <!-- Icons for completion -->
+                  <mat-icon class="icons green" *ngIf="getCompletionPercent(training) === 1">
+                    check_circle
+                  </mat-icon>
+                  <mat-icon class="icons red" *ngIf="getCompletionPercent(training) < 0.5">
+                    error_outline
+                  </mat-icon>
+                  <mat-icon
+                    class="icons yellow"
+                    *ngIf="
+                      getCompletionPercent(training) >= 0.5 &&
+                      getCompletionPercent(training) < 1
+                    "
+                  >
+                    error_outline
+                  </mat-icon>
                 </div>
               </td>
             </tr>
@@ -47,6 +80,7 @@
   </div>
 </div>
 
+<!-- 3) Detail Modal for a selected training -->
 <ng-template #content let-modal>
   <div class="modal-header">
     <div class="modal-title" id="modal-basic-title">
@@ -54,17 +88,25 @@
         {{ selectedTraining?.trainingName }}:
         {{ selectedTraining?.duration }} minutes
         <div class="tag">
-          {{ selectedTraining?.trainingDate | date:"MMMM" }}
+          {{ selectedTraining?.trainingDate | date:'MMMM' }}
         </div>
       </div>
     </div>
     <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
   </div>
+
   <div class="modal-body">
+    <!-- e.g. a second search for employees in this training -->
     <div class="card search">
-      <input class="input" type="text" placeholder="Search employees..." [formControl]="empFilter" />
+      <input
+        class="input"
+        type="text"
+        placeholder="Search employees..."
+        [formControl]="empFilter"
+      />
       <mat-icon class="icon search">search</mat-icon>
     </div>
+
     <table class="table table-hover">
       <thead class="table-dark">
         <tr>
@@ -75,35 +117,103 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let emp of (filteredEmp | async) || selectedTrainingEmployees; index as j">
+        <tr
+          *ngFor="let emp of (filteredEmp | async) || selectedTrainingEmployees; index as j"
+        >
           <th scope="row">{{ j + 1 }}</th>
           <td>
-            {{ emp.tblEmployee?.strEmployeeFirstName }} {{ emp.tblEmployee?.strEmployeeLastName }}
+            {{ emp.tblEmployee?.strEmployeeFirstName }}
+            {{ emp.tblEmployee?.strEmployeeLastName }}
           </td>
           <td>
             <label [ngClass]="classList">
-              <input type="checkbox" [(ngModel)]="emp.bitIsComplete" [disabled]="!isEditable" name="chk{{j}}" />
+              <input
+                type="checkbox"
+                [(ngModel)]="emp.bitIsComplete"
+                [disabled]="!isEditable"
+                name="chk{{ j }}"
+              />
               <div class="toggler-slider">
                 <div class="toggler-knob"></div>
               </div>
             </label>
           </td>
           <td>
-            <input type="date"
+            <input
+              type="date"
               [ngModel]="emp.dtCompletionDate | date:'yyyy-MM-dd'"
               (ngModelChange)="emp.dtCompletionDate = $event"
               [disabled]="!isEditable"
-              name="date{{j}}" />
+              name="date{{ j }}"
+            />
           </td>
         </tr>
       </tbody>
     </table>
   </div>
+
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="editable()">Edit</button>
-    <button *ngIf="!loading2" type="button" class="btn btn-outline-dark" (click)="save()" [disabled]="!isEditable">Save</button>
-    <button *ngIf="loading2" type="button" class="btn btn-outline-dark" disabled>
-      <div class="spinner-border spinner-border-sm" role="status"></div>
+    <!-- e.g. your Edit button to toggle checkboxes -->
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="editable()"
+    >
+      Edit
+    </button>
+
+    <!-- The new “Scan Barcode” button -->
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="openBarcodeScanModal(barcodeModal)"
+    >
+      Scan Barcode
+    </button>
+
+    <!-- e.g. your Save button -->
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="save()"
+      [disabled]="!isEditable"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<!-- 4) Sub-modal for scanning barcodes -->
+<ng-template #barcodeModal let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title">Scan Employee Barcode</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss()"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <input
+  type="text"
+  #barcodeInput
+  class="form-control"
+  placeholder="Focus here & scan"
+  (keydown.enter)="onBarcodeEnter($event)"
+  autocomplete="off"
+/>
+    <div class="info mt-2">
+      After scanning, press Enter or let the scanner auto-send Enter.
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss()"
+    >
+      Close
     </button>
   </div>
 </ng-template>

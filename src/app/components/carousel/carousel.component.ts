@@ -71,37 +71,36 @@ export class CarouselComponent implements OnInit {
     this.config.wrap = true;
     this.config.keyboard = false;
     this.config.pauseOnHover = false;
-
+  
+    // Wait until we have a user with a valid role, then proceed.
     this.auth.getUser$().subscribe(user => {
       this.currentUser = user;
-      if (!this.currentUser) {
-        console.error("No user available");
-        return;
-      }
-      if (this.currentUser.role === 'admin') {
+      if (!user) return;
+  
+      if (user.role === 'admin') {
         this.trainingService.getActiveTrainings().subscribe(data => {
           this.trainings = data;
-          console.log("Admin trainings:", this.trainings);
           this.populateChart();
         });
-      } else if (this.currentUser.role === 'manager' || this.currentUser.role === 'leader') {
-        const managerDeptId = this.currentUser.departmentId;
-        if (!managerDeptId) {
+      } 
+      else if (user.role === 'manager' || user.role === 'leader') {
+        // Only proceed once we actually have a departmentId
+        if (!user.departmentId) {
           console.error("Manager department not found!");
           return;
         }
         this.trainingService.getActiveTrainings().subscribe(data => {
-          // Filter trainings that have at least one status with an employee from the manager's department.
           this.trainings = data.filter(training =>
             training.status &&
             training.status.some((s: any) =>
-              s.tblEmployee && s.tblEmployee.departmentId === managerDeptId
+              s.tblEmployee && s.tblEmployee.departmentId === user.departmentId
             )
           );
-          console.log("Filtered trainings for manager:", this.trainings);
           this.populateChart();
         });
-      } else {
+      } 
+      else {
+        // For other roles
         this.trainingService.getActiveTrainings().subscribe(data => {
           this.trainings = data;
           this.populateChart();

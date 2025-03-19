@@ -15,10 +15,20 @@ export class EmployeeService {
 
   constructor(private http: HttpClient, public toastr: ToastrService) { }
 
-  getEmployees():Observable<any>{
-    const token = localStorage.getItem("token"); // Retrieve JWT token from local storage
-    const headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
-    return this.http.get<any[]>('http://localhost:8083/api/Employee/all', { headers });
+  // Adjusted to accept optional page + pageSize
+  getEmployees(page: number = 1, pageSize: number = 50): Observable<any> {
+    const token = localStorage.getItem("token"); 
+    let headers = new HttpHeaders().set("Authorization", `Bearer ${token}`);
+
+    // Add query parameters for pagination
+    let params = new HttpParams()
+      .set('page', page)
+      .set('pageSize', pageSize);
+
+    return this.http.get<any>(
+      'https://localhost:7127/api/Employee/all',
+      { headers, params }
+    );
   }
 
   getClassifications():Observable<any>{
@@ -26,7 +36,10 @@ export class EmployeeService {
   }
 
   addNewEmployee(employee: addEmployee): Observable<any> {
-    return this.http.post<any>('http://localhost:8083/api/Employee/new', employee);
+    return this.http.post<any>('https://localhost:7127/api/Employee/new', employee);
+}
+getByBarcode(barcode: string): Observable<any> {
+  return this.http.get<any>(`${this.baseApiUrl}/api/Employee/byBarcode/${barcode}`);
 }
 
 editEmployee(employee: editEmployee, id: number): Observable<any> {

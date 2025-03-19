@@ -24,13 +24,11 @@ export class DashboardComponent implements OnInit {
             this.trainings = data.filter(training =>
               training.status?.some(statusItem => statusItem.tblEmployee?.departmentId === managerDeptId)
             );
-            console.log("Dashboard trainings:", this.trainings);
           });
         } else {
           // For admin or other roles, assign all trainings (or apply different filtering)
           this.trainingService.getActiveTrainings().subscribe(data => {
             this.trainings = data;
-            console.log("Dashboard trainings:", this.trainings);
           });
         }
       }

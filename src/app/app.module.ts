@@ -85,7 +85,7 @@ NoopAnimationsModule,
         tokenGetter: tokenGetter,
         //allowedDomains: ["localhost:7095"],
         
-        allowedDomains: ["10.90.104.34:7140", "10.90.102.173:8085"],
+        allowedDomains: ["10.90.104.34:7140", "10.90.102.173:8083", "localhost:7127"],
         disallowedRoutes: []
       }
 

@@ -23,11 +23,9 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.auth.getUser$().subscribe(u => {
       if (u) {
-        console.log("User Role:", u.role);
         if (u.role === 'manager' || u.role === 'leader') {
           this.trainingService.getActiveTrainings().subscribe(
             (data) => {
-              console.log("Manager trainings data:", data);
               this.trainingService.trainings = data;
               this.trainingService.loading = false;
             },
@@ -38,11 +36,9 @@ export class HomeComponent implements OnInit {
           );
         }
         else if (u.role === 'admin') {
-          console.log("Fetching training data for admin...");
           // For admin, use the current department endpoint or getActiveTrainings as needed
           this.trainingService.getCurrentDepartment();
         } else {
-          console.log("Non-admin role: fetching current trainings.");
           this.trainingService.getCurrent();
         }
       } else {

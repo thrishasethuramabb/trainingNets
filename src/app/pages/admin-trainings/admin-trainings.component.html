@@ -9,7 +9,6 @@
             placeholder="Search..."
             [formControl]="filter"
           />
-         
           <mat-icon class="icon search">search</mat-icon>
         </div>
       </form>
@@ -21,7 +20,8 @@
       >
         Add Training
       </button>
-      <!-- Add Training -->
+
+      <!-- Add Training Modal -->
       <ng-template #addTrainingModal let-modal>
         <div class="modal-header">
           <div class="modal-title" id="modal-basic-title">
@@ -41,8 +41,7 @@
             (ngSubmit)="addNewTraining(addForm)"
             autocomplete="off"
           >
-            <!-- Hidden input ot disable autocomplete in Edge -->
-            
+            <!-- Hidden input to disable autocomplete in Edge -->
             <input
               autocomplete="off"
               name="hidden"
@@ -60,11 +59,8 @@
                 name="name"
                 autocomplete="off"
                 [(ngModel)]="this.addTraining.name"
-                
-                
               />
             </div>
-        
 
             <div class="col-md-6">
               <label for="inputAddress" class="form-label"
@@ -86,7 +82,7 @@
               <label for="inputAddress" class="form-label"
                 >Frequency (in years)</label
               >
-              <div class="info">0 if not repetititve</div>
+              <div class="info">0 if not repetitive</div>
               <input
                 type="number"
                 [min]="0"
@@ -174,6 +170,7 @@
           </form>
         </div>
       </ng-template>
+
       <div class="card training">
         <div class="spinner" *ngIf="this.loading">
           <div class="spinner-border spinner-border-lg" role="status"></div>
@@ -197,22 +194,22 @@
               <th scope="row">{{ i + 1 }}</th>
               <td>{{ training.trainingName }}</td>
               <td>{{ training.trainingDate | date: 'MMMM' }}</td>
-                <td>{{ training.frequency }}</td>
-             
-
+              <td>{{ training.frequency }}</td>
               <td>{{ training.status.length ? 'Complete' : 'Pending' }}</td>
               <td>{{ training.isActive }}</td>
-                            <td>
-                              <button class="btn actions" (click)="open(content, training)">
-                                <mat-icon>open_in_new</mat-icon>
-                              </button>
-                              <button class="btn actions" (click)="openEditModal(editContent, training)">
-                                <mat-icon>edit</mat-icon>
-                              </button>
-                              
+              <td>
+                <button class="btn actions" (click)="open(content, training)">
+                  <mat-icon>open_in_new</mat-icon>
+                </button>
+                <button
+                  class="btn actions"
+                  (click)="openEditModal(editContent, training)"
+                >
+                  <mat-icon>edit</mat-icon>
+                </button>
               </td>
 
-              <!-- Edit Training -->
+              <!-- Edit Training Modal -->
               <ng-template #editContent let-modal>
                 <div class="modal-header">
                   <div class="modal-title" id="modal-basic-title">
@@ -232,7 +229,7 @@
                     (ngSubmit)="updateTraining(editForm)"
                     autocomplete="off"
                   >
-                    <!-- Hidden input ot disable autocomplete in Edge -->
+                    <!-- Hidden input to disable autocomplete in Edge -->
                     <input
                       autocomplete="off"
                       name="hidden"
@@ -273,7 +270,7 @@
                       <label for="inputAddress" class="form-label"
                         >Frequency (in years)</label
                       >
-                      <div class="info">0 if not repetititve</div>
+                      <div class="info">0 if not repetitive</div>
                       <input
                         type="number"
                         [min]="0"
@@ -306,9 +303,8 @@
                         >Departments</label
                       >
                       <div class="info">
-                        Select 'ALL' if it aplies to all departments
+                        Select 'ALL' if it applies to all departments
                       </div>
-
                       <ng-select
                         [items]="departments"
                         bindLabel="strDepartmentName"
@@ -358,20 +354,20 @@
                   </form>
                 </div>
               </ng-template>
-              <!-- Training Details -->
+
+              <!-- Training Details Modal -->
               <ng-template #content let-modal>
                 <div class="modal-header">
                   <div class="modal-title" id="modal-basic-title">
                     <div>
-                      {{ training?.tbltraining?.strTrainingName }}:
-                      <td>{{ training.duration || 'Training Duration' }}</td> 
+                      {{ training.trainingName }}:
+                      <td>{{ training.duration || 'Training ' }}</td>
                       <div class="tag">
-                        {{
-                          training?.tbltraining?.dtTrainingDate | date : "MMMM"
-                        }}
+                        {{ training.trainingDate | date : 'MMMM' }}
                       </div>
                     </div>
                   </div>
+                 
                   <button
                     type="button"
                     class="btn-close"
@@ -389,7 +385,16 @@
                         [formControl]="empFilter"
                       />
                       <mat-icon class="icon search">search</mat-icon>
+                      
                     </div>
+                      <!-- NEW: Scan Barcode button -->
+                   <button
+                   type="button"
+                   class="btn btn-primary"
+                   (click)="openBarcodeScanModal(barcodeModal)"
+                 >
+                   Scan Barcode
+                 </button>
                   </form>
                   <table class="table table-hover">
                     <thead class="table-dark">
@@ -401,10 +406,10 @@
                         <th scope="col">Completion Date</th>
                       </tr>
                     </thead>
+
                     <tbody>
                       <tr *ngFor="let emp of selectedTraining; let i = index">
                         <th scope="row">{{ i + 1 }}</th>
-                        
                         <!-- Editable Employee Name -->
                         <td>
                           <input
@@ -414,7 +419,7 @@
                             [disabled]="!isEditable"
                           />
                         </td>
-                        
+
                         <!-- Editable Department -->
                         <td>
                           <input
@@ -424,7 +429,7 @@
                             [disabled]="!isEditable"
                           />
                         </td>
-                        
+
                         <!-- Editable Status -->
                         <td>
                           <select
@@ -436,24 +441,21 @@
                             <option [value]="false">Pending</option>
                           </select>
                         </td>
-                        
+
                         <!-- Editable Completion Date -->
                         <td>
                           <input
-                            type="date"
-                            class="form-control"
-                            [(ngModel)]="emp.dtCompletionDate"
-                            [disabled]="!isEditable"
-                          />
+                          type="date"
+                          class="form-control"
+                          [(ngModel)]="emp.dtCompletionDate"
+                          [disabled]="!isEditable"
+                        />
                         </td>
                       </tr>
-                      
-                      
                     </tbody>
-                    
-                    
                   </table>
                 </div>
+
                 <div class="modal-footer">
                   <button
                     type="button"
@@ -462,6 +464,9 @@
                   >
                     Edit
                   </button>
+
+                 
+
                   <button
                     *ngIf="!this.loading2"
                     type="button"
@@ -481,6 +486,41 @@
                       class="spinner-border spinner-border-sm"
                       role="status"
                     ></div>
+                  </button>
+                </div>
+              </ng-template>
+
+              <!-- Sub-modal for scanning barcodes -->
+              <ng-template #barcodeModal let-modal>
+                <div class="modal-header">
+                  <h5 class="modal-title">Scan Employee Barcode</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    (click)="modal.dismiss()"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <input
+                    type="text"
+                    #barcodeInput
+                    class="form-control"
+                    placeholder="Focus here & scan"
+                    (keydown.enter)="onBarcodeEnter($event)"
+                    autocomplete="off"
+                  />
+                  <div class="info mt-2">
+                    After scanning, press Enter or let the scanner auto-send Enter.
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    (click)="modal.dismiss()"
+                  >
+                    Close
                   </button>
                 </div>
               </ng-template>

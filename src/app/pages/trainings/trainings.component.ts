@@ -1,12 +1,14 @@
 // trainings.component.ts
 import { DecimalPipe } from '@angular/common';
-import { Component, OnInit, PipeTransform } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrService } from 'ngx-toastr';
 import { Observable, map, startWith } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
+import { EmployeeService } from 'src/app/services/employee.service';
 import { TrainingService } from 'src/app/services/training.service';
+
 
 @Component({
   selector: 'app-trainings',
@@ -15,6 +17,8 @@ import { TrainingService } from 'src/app/services/training.service';
   providers: [DecimalPipe],
 })
 export class TrainingsComponent implements OnInit {
+  @ViewChild('barcodeInput') barcodeInput: ElementRef;
+
   trainingStatus: any[] = [];
   selectedTraining: any = null;
   selectedTrainingEmployees: any[] = [];
@@ -36,6 +40,7 @@ export class TrainingsComponent implements OnInit {
     private modalService: NgbModal,
     private pipe: DecimalPipe,
     private trainingService: TrainingService,
+    private employeeService: EmployeeService,
     public toastr: ToastrService,
     public auth: AuthService
   ) {}
@@ -71,7 +76,6 @@ export class TrainingsComponent implements OnInit {
     this.loading = true;
     this.trainingService.getActiveTrainings().subscribe(
       (data: any[]) => {
-        console.log('Fetched Data:', data);
         this.trainingStatus = [...data];
         this.filtered = this.filter.valueChanges.pipe(
           startWith(''),
@@ -87,16 +91,35 @@ export class TrainingsComponent implements OnInit {
   }
 
   open(content: any, training: any) {
+    // Store the selected training object
     this.selectedTraining = training;
-    // Use either Status (manager) or status (admin) property
-    this.selectedTrainingEmployees = training.Status || training.status || [];
+  
+    // The server returns an array under either `training.Status` or `training.status`
+    const serverArray = training.Status || training.status || [];
+  
+    // Convert each server object into the shape your template wants
+    this.selectedTrainingEmployees = serverArray.map(item => ({
+      // For your checkboxes
+      bitIsComplete: item.isComplete,            // rename "isComplete" -> "bitIsComplete"
+      dtCompletionDate: item.completionDate
+        ? new Date(item.completionDate)          // parse the date string
+        : null,
+  
+      // If your template also references `.employeeId` or `.tblEmployee`, copy those too:
+      employeeId: item.employeeId,
+      tblEmployee: item.tblEmployee,
+    }));
+  
+    // Setup your employee-filter (if you have a search box)
     this.filteredEmp = this.empFilter.valueChanges.pipe(
       startWith(''),
       map(text => this.searchEmp(text))
     );
+  
+    // Finally open the modal
     this.modalService.open(content, { size: 'lg', centered: true });
   }
-
+  
   close() {
     this.isEditable = false;
     this.removeClass();
@@ -119,7 +142,6 @@ export class TrainingsComponent implements OnInit {
       this.isEditable = false;
       this.toastr.warning('You cannot edit the future training!');
     }
-    console.log(this.selectedTraining);
   }
 
   save() {
@@ -127,17 +149,19 @@ export class TrainingsComponent implements OnInit {
     this.loading2 = true;
     this.isEditable = false;
     this.removeClass();
+  
+    // Build the payload using the mapped fields
     const payload = this.selectedTrainingEmployees.map(emp => ({
-      intEmployeeId: emp.tblEmployee?.intEmployeeId || emp.employeeId,
+      intEmployeeId: emp.employeeId,
       intTrainingId: this.selectedTraining.trainingId,
       bitIsComplete: emp.bitIsComplete,
       dtCompletionDate: emp.dtCompletionDate
     }));
+  
     this.trainingService.updateStatus(payload).subscribe(
-      (data) => {
+      (res) => {
         this.toastr.success('Successfully updated the training status!');
         this.loading2 = false;
-        console.log('Update response:', data);
       },
       (err) => {
         this.toastr.error('Sorry, the changes could not be saved!');
@@ -145,6 +169,7 @@ export class TrainingsComponent implements OnInit {
       }
     );
   }
+  
 
   addClass() {
     this.classList = [...this.classList, 'enable'];
@@ -159,4 +184,79 @@ export class TrainingsComponent implements OnInit {
     const completed = statusArr.filter(s => s.IsComplete || s.isComplete).length;
     return statusArr.length > 0 ? completed / statusArr.length : 0;
   }
+
+  openBarcodeScanModal(content: any) {
+    const modalRef = this.modalService.open(content, { size: 'sm', centered: true });
+    modalRef.result.finally(() => {
+      // do nothing special
+    });
+
+    // Focus the input after a slight delay
+    setTimeout(() => {
+      this.barcodeInput?.nativeElement?.focus();
+    }, 200);
+  }
+
+  // 2) On pressing Enter in the text input
+  // trainings.component.ts
+onBarcodeEnter(event: any): void {
+  // If you want typed usage, do a runtime cast inside:
+  const keyboardEvent = event as KeyboardEvent;
+  const inputEl = keyboardEvent.target as HTMLInputElement;
+
+  const scannedValue = inputEl.value.trim();
+  if (!scannedValue) return;
+
+  // Clear the input
+  inputEl.value = '';
+
+  // Now do your "look up employee by barcode" logic
+  this.employeeService.getByBarcode(scannedValue).subscribe(
+    (employee) => {
+      if (!employee) {
+        this.toastr.error('No employee found for this barcode!');
+        return;
+      }
+      this.markTrainingCompleteForEmployee(employee);
+    },
+    (error) => {
+      console.error('Error looking up employee by barcode:', error);
+      this.toastr.error('Failed to look up employee by barcode.');
+    }
+  );
+}
+
+  // 4) Mark the training complete for that employee
+  markTrainingCompleteForEmployee(employee: any) {
+    // The currently opened training detail is in `this.selectedTraining`
+    if (!this.selectedTraining || !this.selectedTraining.trainingId) {
+      this.toastr.error('No training selected. Cannot mark complete.');
+      return;
+    }
+
+    const payload = [{
+      intEmployeeId: employee.intEmployeeId,
+      intTrainingId: this.selectedTraining.trainingId,
+      bitIsComplete: true,
+      dtCompletionDate: new Date()
+    }];
+
+    this.trainingService.updateStatus(payload).subscribe(
+      (res) => {
+        this.toastr.success(`Marked training complete for ${employee.strEmployeeFirstName}.`);
+
+        // If you want to reflect in UI, find that employee in selectedTrainingEmployees array:
+        const found = (this.selectedTrainingEmployees || []).find(e => e.employeeId === employee.intEmployeeId);
+        if (found) {
+          found.bitIsComplete = true;
+          found.dtCompletionDate = new Date();
+        }
+      },
+      (err) => {
+        console.error('Error marking training complete', err);
+        this.toastr.error('Failed to mark training complete');
+      }
+    );
+  }
+
 }

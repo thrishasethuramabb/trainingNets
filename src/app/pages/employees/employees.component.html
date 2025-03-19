@@ -92,20 +92,30 @@
                 <td>{{ training.trainingName }}</td>
                 <td>
                   <label [ngClass]="classList">
-                    <input type="checkbox"
-                      [(ngModel)]="training.IsComplete"
-                      [disabled]="!isEditable"
-                      name="chk{{j}}"/>
+                    <!-- CheckBox for isComplete -->
+                          <input
+                          type="checkbox"
+                          [(ngModel)]="training.isComplete"
+                          [disabled]="!isEditable"
+                          name="chk{{ j }}"
+                          />
+
+
+
                     <div class="toggler-slider">
                       <div class="toggler-knob"></div>
                     </div>
                   </label>
                 </td>
                 <td>
-                  <input type="date"
-                    [(ngModel)]="training.CompletionDateString"
-                    [disabled]="!isEditable"
-                    name="date{{j}}"/>
+                 <!-- Date input for CompletionDateString -->
+<input
+type="date"
+class="form-control"
+[(ngModel)]="training.CompletionDateString"
+[disabled]="!isEditable"
+name="date{{ j }}"
+/>
                 </td>
               </tr>
             </tbody>

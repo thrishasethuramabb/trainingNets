@@ -144,7 +144,6 @@ openEditModal(editContent, department){
   this.loading2=false;
 
    //this.editEmployee.isActive=employee.bitemployeeIsActive;
-   console.log(department);
   this.editDepartment.strDepartmentName=department.strDepartmentName;
   this.editDepartment.intDepartmentId=department.intDepartmentId;
   this.editDepartment.bitIsActive=department.bitIsActive;
@@ -274,7 +273,6 @@ openEditModal(editContent, department){
     this.loading2 = true;
     // Since the department ID is auto-generated, force it to 0.
     this.addDepartment.intDepartmentId = 0;
-    console.log("Add Department Form:", addForm);
     
     this.departmentService.addNewDepartment(this.addDepartment).subscribe(
       (data) => {
@@ -300,7 +298,6 @@ openEditModal(editContent, department){
 
         this.loading2=true;
        // this.addDepartment.department = addForm.value.department.strDepartmentName;
-        console.log(editForm)
     
          this.departmentService.editDepartment(this.editDepartment,this.editDepartment.intDepartmentId).subscribe(
              (data)=>{

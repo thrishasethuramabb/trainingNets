@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { TrainingService } from 'src/app/services/training.service';
-
-// For ng2-charts / chart.js
 import { ChartOptions, ChartData } from 'chart.js';
+import { filter, take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-chart',
@@ -12,25 +11,11 @@ import { ChartOptions, ChartData } from 'chart.js';
 })
 export class ChartComponent implements OnInit {
 
-  user: any;          // current user info from Auth
-  isLoading: boolean; // to show/hide a spinner if desired
+  user: any;          // Current user info from Auth
+  isLoading: boolean = true;
   date: Date = new Date();
 
-  // ----- PIE CHART (Manager/Leader) -----
-  pieChartOptions: ChartOptions<'pie'> = {
-    responsive: true
-  };
-  pieChartData: ChartData<'pie'> = {
-    labels: ['Completed', 'Remaining'],
-    datasets: [
-      {
-        data: [0, 100],
-        backgroundColor: ['rgb(95, 216, 100)', 'rgb(230, 80, 80)']
-      }
-    ]
-  };
-
-  // ----- BAR CHART (Admin) -----
+  // ----- BAR CHART CONFIGURATION (Used for both Admin & Manager/Leader) -----
   barChartOptions: ChartOptions<'bar'> = {
     responsive: true,
     scales: {
@@ -45,7 +30,7 @@ export class ChartComponent implements OnInit {
       x: {
         title: {
           display: true,
-          text: 'Supervisor'
+          text: 'Manager'
         }
       }
     }
@@ -54,75 +39,87 @@ export class ChartComponent implements OnInit {
     labels: [],
     datasets: [
       { data: [], label: 'Percent Completed' }
-    
     ]
   };
 
   constructor(
     private authService: AuthService,
     public trainingService: TrainingService
-  ) {
-    this.isLoading = true;
-  }
+  ) {}
 
   ngOnInit(): void {
-    // Subscribe to get the current user
-    this.authService.getUser$().subscribe(u => {
+    // Wait until a non-null user is emitted, then take the first value.
+    this.authService.getUser$().pipe(
+      filter(u => !!u),
+      take(1)
+    ).subscribe(u => {
       this.user = u;
-      if (!u) {
-        console.warn("No user loaded or not logged in.");
-        this.isLoading = false;
-        return;
-      }
-
-      // If admin -> show bar chart
       if (u.role === 'admin') {
         this.loadBarChartForAdmin();
-      }
-      // If manager or leader -> show existing pie chart
-      else if (u.role === 'manager' || u.role === 'leader') {
-        this.loadPieChartForManager();
-      }
-      // Otherwise, do nothing or show a message
-      else {
+      } else if (u.role === 'manager' || u.role === 'leader') {
+        this.loadBarChartForManager();
+      } else {
         this.isLoading = false;
       }
     });
   }
 
-  // Load bar chart data for admin
+  // Admin side: Loads the progress data and reassigns the chart data to trigger change detection.
   loadBarChartForAdmin(): void {
     this.trainingService.getManagersProgress().subscribe({
-      next: (result) => {
-        // result is an array: [ { supervisorName: string, percentCompleted: number }, ... ]
-        const labels = result.map(item => item.supervisorName);
+      next: (result: any[]) => {
+        const labels = result.map(item => item.managerName);
         const completedValues = result.map(item => item.percentCompleted);
-    
-
-        this.barChartData.labels = labels;
-        this.barChartData.datasets[0].data = completedValues; // "Percent Completed"
-         // "GOAL"
-
+        // Reassign the chart data object to force update.
+        this.barChartData = {
+          labels: labels,
+          datasets: [
+            { data: completedValues, label: 'Percent Completed' }
+          ]
+        };
         this.isLoading = false;
       },
       error: (err) => {
-        console.error("Error loading manager progress:", err);
+        console.error("Error loading managers progress:", err);
         this.isLoading = false;
       }
     });
   }
 
-  // Load existing pie chart for manager/leader
-  loadPieChartForManager(): void {
-    // If you have trainingService.average, etc. 
-    // Wait a moment or recalc as needed:
-    setTimeout(() => {
-      const avg = this.trainingService.average || 0;
-      const completed = parseFloat(avg.toFixed(1));
-      const remaining = 100 - completed;
-
-      this.pieChartData.datasets[0].data = [completed, remaining];
-      this.isLoading = false;
-    }, 500);
+loadBarChartForManager(): void {
+  if (!this.user.departmentId) {
+    console.error("Manager department not found!");
+    this.isLoading = false;
+    return;
   }
+  const currentMonth = this.date.getMonth() + 1; // getMonth() is zero-indexed
+  const currentYear = this.date.getFullYear();
+  // Call the service to get department managers progress for the current month.
+  this.trainingService.getDepartmentManagersProgress({ 
+    departmentId: this.user.departmentId, 
+    month: currentMonth, 
+    year: currentYear 
+  }).subscribe({
+    next: (result: any[]) => {
+      // Expected format: [ { managerName: string, percentCompleted: number }, ... ]
+      const labels = result.map(item => item.managerName);
+      const completedValues = result.map(item => item.percentCompleted);
+      // Reassign the chart data object with new reference.
+      this.barChartData = {
+        labels: labels,
+        datasets: [
+          { data: completedValues, label: 'Percent Completed' }
+        ]
+      };
+      this.isLoading = false;
+    },
+    error: (err) => {
+      console.error("Error Loading Department progress:", err);
+      this.isLoading = false;
+    }
+
+    
+  });
+}
+
 }

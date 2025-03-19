@@ -20,11 +20,9 @@ export class TableComponent implements OnInit {
   getUpcomingTrainings() {
     this.trainingService.getActiveTrainings().subscribe(
       (data) => {
-        console.log("Active trainings data:", data);
         const now = new Date();
         // Use the correct property name: training.trainingDate
         this.upcomings = data.filter(training => new Date(training.trainingDate) > now);
-        console.log("Filtered upcoming trainings:", this.upcomings);
       },
       (err) => {
         console.error('Error fetching upcoming trainings:', err);

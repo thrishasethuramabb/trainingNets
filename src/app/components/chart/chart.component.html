@@ -5,10 +5,12 @@
   <p>Loading chart data...</p>
 </div>
 
-<!-- Admin: Show bar chart -->
-<div *ngIf="!isLoading && user?.role === 'admin'" class="chart-container admin-chart-container">
-  <h3>Manager Wise Training Progress {{ date | date:'yyyy' }}</h3>
-  <div class="admin-chart-wrapper">
+<!-- Unified Bar Chart for Admin and Manager/Leader -->
+<div *ngIf="!isLoading && (user?.role === 'admin' || user?.role === 'manager' || user?.role === 'leader')" class="chart-container">
+  <!-- Header changes based on role -->
+  <h3 *ngIf="user?.role === 'admin'">All Departments Managers Progress ({{ date | date:'yyyy' }})</h3>
+  <h3 *ngIf="user?.role === 'manager' || user?.role === 'leader'">{{ date | date:'MMMM yyyy' }} Department Managers Progress</h3>
+  <div class="chart-wrapper">
     <canvas
       baseChart
       [data]="barChartData"
@@ -18,24 +20,6 @@
   </div>
 </div>
 
-
-
-<!-- Manager/Leader: Show existing pie chart -->
-<div
-  *ngIf="!isLoading && (user?.role === 'manager' || user?.role === 'leader')"
-  class="chart-container pie-chart-container">
-  <h3>{{ date | date:'MMMM yyyy' }} Overall Trainings</h3>
-  <canvas
-    baseChart
-    [data]="pieChartData"
-    [options]="pieChartOptions"
-    [type]="'pie'">
-  </canvas>
-</div>
-
-
-
-
-<div *ngIf="!isLoading && user?.role !== 'admin' && user?.role !== 'manager' && user?.role !== 'leader'">
+<div *ngIf="!isLoading && !(user?.role === 'admin' || user?.role === 'manager' || user?.role === 'leader')">
   <p>No chart available for this role.</p>
 </div>

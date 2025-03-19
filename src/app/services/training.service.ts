@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Injectable, DoCheck } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from './../../environments/environment';
@@ -66,11 +66,9 @@ export class TrainingService{
   
   getCurrentDepartment() {
     this.loading = true;
-    console.log("Fetching current department trainings...");
     
     this.getDepartmentCurrentStatus().subscribe(
       (data) => {
-        console.log("Received API response:", data);
   
         // Ensure the response contains expected values
         if (data && Array.isArray(data)) {
@@ -81,7 +79,6 @@ export class TrainingService{
         }
   
         this.loading = false;
-        console.log("Final Trainings Data:", this.trainings);
       },
       (err) => {
         console.error("Error fetching department training data:", err);
@@ -97,12 +94,22 @@ export class TrainingService{
   getManagersProgress(): Observable<any[]> {
     return this.http.get<any[]>(`${this.baseApiUrl}/api/Training/managers-progress`);
   }
+
+
+  getDepartmentManagersProgress(params: { departmentId: number, month: number, year: number }): Observable<any[]> {
+    const httpParams = new HttpParams()
+      .set('departmentId', params.departmentId.toString())
+      .set('month', params.month.toString())
+      .set('year', params.year.toString());
+
+    return this.http.get<any[]>(`${this.baseApiUrl}/api/Training/departmentManagersProgress`, { params: httpParams });
+  }
   
  
 
   getTrainingById(trainingId: number) {
      
-  const API_BASE_URL = 'http://localhost:8083/api/Training'; // Use the correct backend URL
+  const API_BASE_URL = 'https://localhost:7127/api/Training'; // Use the correct backend URL
     return this.http.get<any>(`${API_BASE_URL}/byId/${trainingId}`);
   }
   
@@ -111,6 +118,7 @@ export class TrainingService{
     return this.http.get<any>(this.baseApiUrl+"/api/Training/current");
 
   }
+  
 
   getUpcomingTrainings(): Observable<any> {
     return this.http.get<any>(this.baseApiUrl + "/api/Training/upcoming")
@@ -124,7 +132,6 @@ export class TrainingService{
   }
 
   getActiveTrainings(): Observable<any> {
-    console.log("Calling API: " + this.baseApiUrl + "/api/Training/active");
     return this.http.get<any>(this.baseApiUrl + "/api/Training/active").pipe(
       tap(data => {
         this.trainingsSubject.next(data);
@@ -135,7 +142,6 @@ export class TrainingService{
   
   
   getActiveDepartments(): Observable<any> {
-    console.log("Calling API: /api/Department/active");
     return this.http.get<any>(this.baseApiUrl + "/api/Department/active");
   }
   getDepartmentCurrentStatus():Observable<any>{

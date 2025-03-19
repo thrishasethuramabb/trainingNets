@@ -80,7 +80,6 @@ export class AuthService {
       tap(response => {
         if (response && response.token) {
           localStorage.setItem("token", response.token); // Store token
-          console.log("Token stored successfully:", response.token);
         }
       })
     );
@@ -89,7 +88,6 @@ export class AuthService {
   public getMe(): Observable<any> {
     return this.http.get<any>(this.baseApiUrl + "/api/Auth/me",   {headers:new HttpHeaders({'Access-Control-Allow-Origin': '*', 'withCredentials': 'true'})}, ).pipe(
       tap(data => {
-        console.log("User data from API:", data);
       })
     );
   }

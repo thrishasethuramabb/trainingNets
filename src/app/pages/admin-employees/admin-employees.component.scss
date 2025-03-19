@@ -214,6 +214,15 @@ margin-left: 0.5rem;
     }
 
 }
+.pagination-controls {
+    margin: 1rem auto;
+    text-align: center;
+  
+    button {
+      margin: 0 1rem;
+    }
+  }
+  
 .edit{
     cursor: pointer;
     align-self: center;
@@ -347,3 +356,4 @@ margin-left: 0.5rem;
     color: grey;
     font-size: 12px;
 }
+

@@ -1,18 +1,25 @@
 <div class="container-body">
 
-  <div class="container">
-    <h2>Export Employee Training Data</h2>
-    
-    <label>Start Date:</label>
-    <input type="date" [(ngModel)]="startDate" />
-    
-    <label>End Date:</label>
-    <input type="date" [(ngModel)]="endDate" />
-  
-    <button (click)="exportData()">Export to Excel</button>
-  </div> 
+  <!-- Export Training Data Container -->
+  <div class="export-container">
+    <div class="export-card">
+      <h2>Export Employee Training Data</h2>
+      
+      <div class="form-group">
+        <label>Start Date:</label>
+        <input type="date" [(ngModel)]="startDate" class="form-control" />
+      </div>
+      
+      <div class="form-group">
+        <label>End Date:</label>
+        <input type="date" [(ngModel)]="endDate" class="form-control" />
+      </div>
+      
+      <button (click)="exportData()" class="btn btn-primary">Export to Excel</button>
+    </div>
+  </div>
 
-  
+  <!-- Existing Dashboard and Spinner -->
   <div class="wrapper">
     <div *ngIf="trainingService.loading" class="spinner">
       <div class="spinner-border spinner-border-lg" role="status"></div>
@@ -22,5 +29,3 @@
   </div>
  
 </div>
-
-
